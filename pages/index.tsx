@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import appColors from '../constants/appColors'
 import Image from 'next/image'
 import Tombol from '../components/Tombol'
+import KartuMenu from '../components/KartuMenu';
 // import styles from '../styles/Home.module.css'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
