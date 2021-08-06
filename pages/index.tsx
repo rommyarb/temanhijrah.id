@@ -3,6 +3,7 @@ import Container from '../components/Container'
 import Header from '../components/Header'
 import appColors from '../constants/appColors'
 import Image from 'next/image'
+import Tombol from '../components/Tombol'
 // import styles from '../styles/Home.module.css'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
@@ -35,6 +36,15 @@ export default function Home() {
                   Karena senang susah kita sama-sama untuk teman yang ISOMAN,
                   ada program catering, distribusi obat &amp; vitamin gerakan
                   isi tabung oksigen, telekonsultasi
+                </div>
+                <div className="md:flex md:items-center mt-4">
+                  <Tombol
+                    label="Butuh dibantu"
+                    warna="merah"
+                    ikon="/img/icon/hotel.svg"
+                  />
+                  <div className="w-5 h-3 md:h-0"></div>
+                  <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
                 </div>
               </div>
               <div className="order-first md:order-last px-20 md:px-0">
