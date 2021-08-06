@@ -5,7 +5,9 @@ import Header from '../components/Header'
 import appColors from '../constants/appColors'
 import Image from 'next/image'
 import Tombol from '../components/Tombol'
+import KartuMenu from '../components/KartuMenu';
 // import styles from '../styles/Home.module.css'
+import dataKartuMenu from '../constants/dataMenu';
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
@@ -73,6 +75,9 @@ export default function Home() {
             juga membutuhkan bantuan selama PPKM sekitaran{' '}
             <span className="font-medium">JABODETABEK</span>
           </div>
+          <div className="flex mt-6 flex-wrap place-content-center mt-6">
+            {dataKartuMenu?.map((val, index) => <KartuMenu key={index} ikon={val.ikon} judul={val.judul} deskipsi={val.deskripsi} />)}
+          </div>
           <div
             style={{ borderRadius: 10, backgroundColor: appColors.redLight }}
             className="p-4 md:flex md:items-center mt-6"
@@ -95,7 +100,7 @@ export default function Home() {
               />
             </div>
             <Tombol label="Hubungi" warna="merah" size="sm" />
-          </div>
+          </div> 
         </div>
       </Container>
     </div>
