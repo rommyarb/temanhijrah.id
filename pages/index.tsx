@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Tombol from '../components/Tombol'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import IconHotel from '../public/img/hotel.svg'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
@@ -25,9 +26,11 @@ export default function Home() {
               Bersama Aksi Peduli
               <br />
               #TemanHijrah
+
             </div>
           </div>
         </Container>
+        <Tombol label="Butuh Dibantu" warna="merah" ikon="/img/hotel.svg"/>
       </main>
     </div>
   )
