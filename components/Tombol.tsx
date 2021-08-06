@@ -11,8 +11,7 @@ interface Props {
 const Tombol: React.FC<Props> = ({ label, warna, ikon }) =>
   warna === 'merah' ? (
     <button
-      style={{ backgroundColor: appColors.redPrimary,
-        fontFamily: "'Work Sans', sans-serif" }}
+      style={{ backgroundColor: appColors.redPrimary }}
       className="
      rounded-full shadow-sm focus:bg-red-300 w-full md:w-56 h-11
     text-lg font-medium text-white space-x-2
@@ -27,8 +26,7 @@ const Tombol: React.FC<Props> = ({ label, warna, ikon }) =>
     </button>
   ) : (
     <button
-      style={{ backgroundColor: appColors.gray1,
-        fontFamily: "'Work Sans', sans-serif"}}
+      style={{ backgroundColor: appColors.gray1 }}
       className="rounded-full shadow-sm focus:bg-red-300 w-full md:w-56 h-11
     text-lg font-medium text-white space-x-2
     flex flex-wrap content-center justify-center items-center"
