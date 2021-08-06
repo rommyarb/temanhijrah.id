@@ -22,23 +22,23 @@ export default function Home() {
       <main>
         <Container>
           <Header />
-          <div id="section-1" className="mt-1">
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center">
+          <div id="section-1" className="mt-1 md:pt-10">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center">
               <div className="px-4">
-                <div className=" text-3xl md:text-6xl font-bold py-4">
+                <div className="text-3xl md:text-5xl font-bold mb-5">
                   Bersama Aksi Peduli
                   <br />
                   #TemanHijrah
                 </div>
                 <div
                   style={{ color: appColors.gray3 }}
-                  className="text-sm md:text-base"
+                  className="text-sm md:text-base mb-8 md:w-10/12"
                 >
                   Karena senang susah kita sama-sama untuk teman yang ISOMAN,
                   ada program catering, distribusi obat &amp; vitamin gerakan
                   isi tabung oksigen, telekonsultasi
                 </div>
-                <div className="md:flex md:items-center mt-4">
+                <div className="md:flex md:items-center">
                   <Tombol
                     label="Butuh dibantu"
                     warna="merah"
@@ -52,8 +52,8 @@ export default function Home() {
                 <Image
                   src="/img/gambar1.png"
                   alt="Hai"
-                  height="700"
-                  width="700"
+                  height="900"
+                  width="800"
                   objectFit="contain"
                 />
               </div>
