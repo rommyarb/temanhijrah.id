@@ -8,6 +8,7 @@ import Tombol from '../components/Tombol'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
 import dataKartuMenu from '../constants/dataMenu'
+import Select from 'react-select'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
@@ -24,33 +25,33 @@ export default function Home() {
 
       <Container>
         <Header />
-        <div id="section-1" className="mt-1 md:pt-10">
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center">
+        <div id="section-1" className="mt-1 sm:pt-10">
+          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center">
             <div className="px-4">
-              <div className="text-3xl md:text-5xl font-bold mb-5">
+              <div className="text-3xl sm:text-5xl font-bold mb-5">
                 Bersama Aksi Peduli
                 <br />
                 #TemanHijrah
               </div>
               <div
                 style={{ color: appColors.gray3 }}
-                className="text-sm mb-8 md:w-10/12 tracking-wide"
+                className="text-sm mb-8 sm:w-10/12 tracking-wide"
               >
                 Karena senang susah kita sama-sama untuk teman yang ISOMAN, ada
                 program catering, distribusi obat &amp; vitamin gerakan isi
                 tabung oksigen, telekonsultasi
               </div>
-              <div className="md:flex md:items-center">
+              <div className="sm:flex sm:items-center">
                 <Tombol
                   label="Butuh dibantu"
                   warna="merah"
                   ikon="/img/icon/hotel.svg"
                 />
-                <div className="w-5 h-3 md:h-0"></div>
+                <div className="w-5 h-3 sm:h-0"></div>
                 <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
               </div>
             </div>
-            <div className="order-first md:order-last px-20 md:px-0">
+            <div className="order-first sm:order-last px-20 sm:px-0">
               <Image
                 src="/img/gambar1.png"
                 alt="Hai"
@@ -62,9 +63,9 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-8 mx-auto flex flex-col items-center">
-          <div className="md:flex mt-7 md:mt-0 items-center font-medium text-2xl md:text-3xl text-center tracking-wide">
+          <div className="sm:flex mt-7 sm:mt-0 items-center font-medium text-2xl sm:text-3xl text-center tracking-wide">
             <div>Teman Hijrah yang</div>
-            <span className="hidden md:inline-block">&nbsp;</span>
+            <span className="hidden sm:inline-block">&nbsp;</span>
             <div style={{ color: appColors.redPrimary }}>butuh dibantu</div>
           </div>
           <div
@@ -92,18 +93,12 @@ export default function Home() {
             <div style={{ color: appColors.gray2 }} className="tracking-wide">
               Pilih Domisili Kamu
             </div>
-            <div
-              className="flex items-center border bg-white p-2 mx-4 w-36 justify-between"
-              style={{ borderRadius: 4 }}
-            >
-              <select className="text-xs font-bold tracking-wide appearance-none">
-                <option>Jakarta</option>
-              </select>
-              <img
-                src="/img/icon/chevron_down.svg"
-                alt=""
-                height="14"
-                width="14"
+            <div className="mx-4 w-36">
+              <Select
+                instanceId="select-domisili"
+                options={[{ value: 'Jakarta', label: 'Jakarta' }]}
+                value={{ value: 'Jakarta', label: 'Jakarta' }}
+                noOptionsMessage={() => 'Tidak ditemukan.'}
               />
             </div>
             <Tombol label="Hubungi" warna="merah" size="sm" />

@@ -50,12 +50,12 @@ const Header: React.FC<ComponentProps> = () => {
           className="absolute top-0 left-0 w-full h-full z-10"
           style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
         >
-          <div className="py-3 h-full w-3/4 bg-white">
-            <div className="px-5 flex items-center w-full">
+          <div className="py-3 h-full w-full bg-white">
+            <div className="pt-4 px-5 flex items-center w-full">
               <Image
                 src="/img/logo.png"
-                height="100px"
-                width="300px"
+                height="50px"
+                width="220px"
                 objectFit="contain"
                 alt="Logo"
               />
@@ -66,7 +66,7 @@ const Header: React.FC<ComponentProps> = () => {
                 }}
               >
                 <Image
-                  src="/img/icon/clear.png"
+                  src="/img/icon/clear.svg"
                   height="30px"
                   width="30px"
                   objectFit="contain"
@@ -74,7 +74,7 @@ const Header: React.FC<ComponentProps> = () => {
                 />
               </div>
             </div>
-            <div className="mx-5 h-3 border-b mb-3"></div>
+            <div className="mx-5 h-3 mb-3"></div>
             <div className="px-5 text-lg py-2 hover:bg-red-100">
               Butuh dibantu
             </div>
