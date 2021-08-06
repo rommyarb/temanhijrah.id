@@ -32,7 +32,7 @@ export default function Home() {
                 </div>
                 <div
                   style={{ color: appColors.gray3 }}
-                  className="text-sm md:text-base mb-8 md:w-10/12"
+                  className="text-sm mb-8 md:w-10/12 tracking-wide"
                 >
                   Karena senang susah kita sama-sama untuk teman yang ISOMAN,
                   ada program catering, distribusi obat &amp; vitamin gerakan
@@ -59,8 +59,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-          <KartuMenu ikon="/img/icon/mobil.svg" judul="Butuh Antar Jemput" deskipsi="Menyediakan untuk operasional jalan" />
+          <div className="mt-8 mx-auto flex flex-col items-center">
+            <div className="font-medium md:text-3xl text-center tracking-wide">
+              Teman Hijrah yang{' '}
+              <span style={{ color: appColors.redPrimary }}>butuh dibantu</span>
+            </div>
+            <div
+              className="text-center max-w-2xl mt-5 tracking-wide text-sm"
+              style={{ color: appColors.gray2 }}
+            >
+              InsyaAllah kami akan siap membantu teman-teman yang lagi ISOMAN
+              dan juga membutuhkan bantuan selama PPKM sekitaran{' '}
+              <span className="font-medium">JABODETABEK</span>
+            </div>
           </div>
         </Container>
       </main>
