@@ -39,13 +39,12 @@ export default function Home() {
                 </div>
                 <div className="md:flex md:items-center mt-4">
                   <Tombol
-                   className="font-family: 'Work Sans', sans-serif"
                     label="Butuh dibantu"
                     warna="merah"
                     ikon="/img/icon/hotel.svg"
                   />
                   <div className="w-5 h-3 md:h-0"></div>
-                  <Tombol className="font-family: 'Work Sans', sans-serif" label="Mau membantu" ikon="/img/icon/hospital.svg" />
+                  <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
                 </div>
               </div>
               <div className="order-first md:order-last px-20 md:px-0">
