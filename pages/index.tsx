@@ -21,10 +21,10 @@ export default function Home() {
       <main>
         <Container>
           <Header />
-          <div id="section-1" className="mt-1">
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center">
+          <div id="section-1" className="mt-1 md:pt-10">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center">
               <div className="px-4">
-                <div className=" text-3xl md:text-6xl font-bold py-4">
+                <div className=" text-3xl md:text-5xl font-bold py-4">
                   Bersama Aksi Peduli
                   <br />
                   #TemanHijrah

@@ -7,7 +7,7 @@ const Header: React.FC<ComponentProps> = () => {
   return (
     <div className="shadow-md">
       <div
-        className="px-4 mx-auto max-w-5xl flex items-center justify-between"
+        className="px-4 mx-auto max-w-4xl flex items-center justify-between"
         style={{ height: 70 }}
       >
         <Image
