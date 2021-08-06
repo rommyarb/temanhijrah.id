@@ -25,22 +25,24 @@ const Header: React.FC<ComponentProps> = () => {
             Mau dibantu
           </div>
         </div>
-        <div className="md:hidden">
-          <div
-            className="hover:bg-red-100 cursor-pointer p-1 flex items-center rounded-md"
-            onClick={() => {
-              setShowMobileMenu(true)
-            }}
-          >
-            <Image
-              src="/img/icon/menu.png"
-              alt="Menu"
-              height="20"
-              width="20"
-              objectFit="contain"
-            />
+        {!showMobileMenu && (
+          <div className="md:hidden">
+            <div
+              className="hover:bg-red-100 cursor-pointer p-1 flex items-center rounded-md"
+              onClick={() => {
+                setShowMobileMenu(true)
+              }}
+            >
+              <Image
+                src="/img/icon/menu.png"
+                alt="Menu"
+                height="20"
+                width="20"
+                objectFit="contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {showMobileMenu && (
@@ -72,9 +74,13 @@ const Header: React.FC<ComponentProps> = () => {
                 />
               </div>
             </div>
-            <div className="h-3 border-b mb-3"></div>
-            <div className="px-5 text-lg py-2 hover:bg-red-100">Butuh dibantu</div>
-            <div className="px-5 text-lg py-2 hover:bg-red-100">Mau membantu</div>
+            <div className="mx-5 h-3 border-b mb-3"></div>
+            <div className="px-5 text-lg py-2 hover:bg-red-100">
+              Butuh dibantu
+            </div>
+            <div className="px-5 text-lg py-2 hover:bg-red-100">
+              Mau membantu
+            </div>
           </div>
         </div>
       )}
