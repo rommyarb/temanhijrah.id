@@ -37,10 +37,15 @@ export default function Home() {
                   ada program catering, distribusi obat &amp; vitamin gerakan
                   isi tabung oksigen, telekonsultasi
                 </div>
-                <div className="flex items-center space-x-5 mt-6">
-                  <Tombol label="Butuh Dibantu" warna="merah" ikon="/img/hotel.svg"/>
-                  <Tombol label="Butuh Dibantu" warna="grey" ikon="/img/hospital.svg"/>
-               </div>
+                <div className="md:flex md:items-center mt-4">
+                  <Tombol
+                    label="Butuh dibantu"
+                    warna="merah"
+                    ikon="/img/icon/hotel.svg"
+                  />
+                  <div className="w-5 h-3 md:h-0"></div>
+                  <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
+                </div>
               </div>
               <div className="order-first md:order-last px-20 md:px-0">
                 <Image
