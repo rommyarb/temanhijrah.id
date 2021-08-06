@@ -76,7 +76,7 @@ export default function Home() {
             juga membutuhkan bantuan selama PPKM sekitaran{' '}
             <span className="font-medium">JABODETABEK</span>
           </div>
-          <div className="grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-4 mt-6">
+          <div className="max-w-4xl grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-2 sm:gap-4 mt-6">
             {dataKartuMenu?.map((val, index) => (
               <KartuMenu
                 key={`kartuMenu-${index}`}
@@ -86,22 +86,44 @@ export default function Home() {
               />
             ))}
           </div>
-          <div
-            style={{ borderRadius: 10, backgroundColor: appColors.redLight }}
-            className="p-4 md:flex md:items-center mt-6"
-          >
-            <div style={{ color: appColors.gray2 }} className="tracking-wide">
-              Pilih Domisili Kamu
+          <div className="w-full md:w-auto px-4 md:px-0">
+            <div
+              style={{ borderRadius: 10, backgroundColor: appColors.redLight }}
+              className="p-6 md:p-4 w-full md:w-auto md:flex md:items-center mt-6"
+            >
+              <div
+                style={{ color: appColors.gray2 }}
+                className="tracking-wide mb-5 md:mb-0"
+              >
+                Pilih Domisili Kamu
+              </div>
+              <div className="md:mx-4 w-full md:w-36 mb-5 md:mb-0">
+                <Select
+                  instanceId="select-domisili"
+                  options={[{ value: 'Jakarta', label: 'Jakarta' }]}
+                  value={{ value: 'Jakarta', label: 'Jakarta' }}
+                  noOptionsMessage={() => 'Tidak ditemukan.'}
+                />
+              </div>
+              <div className="hidden md:block">
+                <Tombol label="Hubungi" warna="merah" size="sm" />
+              </div>
+              <div className="md:hidden block">
+                <Tombol label="Hubungi" warna="merah" />
+              </div>
             </div>
-            <div className="mx-4 w-36">
-              <Select
-                instanceId="select-domisili"
-                options={[{ value: 'Jakarta', label: 'Jakarta' }]}
-                value={{ value: 'Jakarta', label: 'Jakarta' }}
-                noOptionsMessage={() => 'Tidak ditemukan.'}
-              />
+          </div>
+
+          <div className="max-w-4xl w-full px-4 mt-28">
+            <div className="sm:max-w-lg sm:flex mt-7 sm:mt-0 items-center font-medium text-2xl sm:text-3xl text-left tracking-wide">
+              <div>
+                Buat Teman Hijrah yang{' '}
+                <span style={{ color: appColors.redPrimary }}>
+                  Mau Membantu
+                </span>{' '}
+                boleh ikutan 😊
+              </div>
             </div>
-            <Tombol label="Hubungi" warna="merah" size="sm" />
           </div>
         </div>
       </Container>
