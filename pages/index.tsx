@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Tombol from '../components/Tombol'
 import KartuMenu from '../components/KartuMenu';
 // import styles from '../styles/Home.module.css'
+import dataKartuMenu from '../constants/dataMenu';
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
@@ -71,6 +72,9 @@ export default function Home() {
               InsyaAllah kami akan siap membantu teman-teman yang lagi ISOMAN
               dan juga membutuhkan bantuan selama PPKM sekitaran{' '}
               <span className="font-medium">JABODETABEK</span>
+            </div>
+            <div className={'flex mt-6 flex-wrap place-content-center'}>
+              {dataKartuMenu?.map((val, index) => <KartuMenu key={index} ikon={val.ikon} judul={val.judul} deskipsi={val.deskripsi} />)}
             </div>
           </div>
         </Container>
