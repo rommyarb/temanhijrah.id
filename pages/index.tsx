@@ -5,7 +5,6 @@ import Header from '../components/Header'
 import appColors from '../constants/appColors'
 import Image from 'next/image'
 import Tombol from '../components/Tombol'
-import CardMenu from '../components/CardMenu'
 // import styles from '../styles/Home.module.css'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
@@ -73,33 +72,6 @@ export default function Home() {
             InsyaAllah kami akan siap membantu teman-teman yang lagi ISOMAN dan
             juga membutuhkan bantuan selama PPKM sekitaran{' '}
             <span className="font-medium">JABODETABEK</span>
-          </div>
-          <div className="grid grid-flow-col grid-cols-2 md:grid-cols-5 grid-rows-3 sm:grid-rows-2 md:grid-rows-1 gap-3 md:gap-6 mt-5">
-            <CardMenu
-              ikon="/img/icon/restaurant.svg"
-              judul="Butuh Catering"
-              deskripsi="Kami memberikan makanan siap sanap dengan sayur &amp; buah"
-            />
-            <CardMenu
-              ikon="/img/icon/healing.svg"
-              judul="Butuh Obat"
-              deskripsi="Kami distribusikan obat, vitamin, dan juga herbal"
-            />
-            <CardMenu
-              ikon="/img/icon/bubble_chart.svg"
-              judul="Butuh Oksigen"
-              deskripsi="Kami pinjamkan tabung oksigen untuk yang saturasinya <90"
-            />
-            <CardMenu
-              ikon="/img/icon/textsms.svg"
-              judul="Butuh Telemedis"
-              deskripsi="Melayani konsultasi medis &amp; rehabilitasi"
-            />
-            <CardMenu
-              ikon="/img/icon/airport_shuttle.svg"
-              judul="Butuh Antar Jemput"
-              deskripsi="Menyediakan untuk operasional jalan"
-            />
           </div>
           <div
             style={{ borderRadius: 10, backgroundColor: appColors.redLight }}
