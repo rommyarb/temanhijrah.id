@@ -9,7 +9,7 @@ module.exports = {
         'gray-2': '#4F4F4F',
       },
       width: {
-        '45': '180px'
+        '45': '187px'
       }
     },
   },
