@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import Tombol from '../components/Tombol'
+import Accordion from '../components/Accordion'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
@@ -26,6 +27,7 @@ export default function Home() {
               <br />
               #TemanHijrah
             </div>
+            <Accordion/>
           </div>
         </Container>
       </main>
