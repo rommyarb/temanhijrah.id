@@ -4,7 +4,6 @@ import Header from '../components/Header'
 import Tombol from '../components/Tombol'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import IconHotel from '../public/img/hotel.svg'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
