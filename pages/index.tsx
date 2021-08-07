@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Head from 'next/head'
-import { useWindowWidth } from '@react-hook/window-size'
 import Select from 'react-select'
 import Image from 'next/image'
 //
@@ -22,8 +21,6 @@ const DESCRIPTION =
   'Gerakan Aksi Peduli Teman Hijrah yang sedang diuji dengan COVID-19.'
 
 export default function Home() {
-  const windowWidth = useWindowWidth()
-  const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
   return (
     <div>
       <Head>
@@ -123,7 +120,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-4xl w-full px-4 mt-28">
+          <div className="max-w-4xl w-full px-4 mt-16 sm:mt-28">
             <div className="sm:max-w-lg sm:flex mt-7 sm:mt-0 items-center font-medium text-2xl sm:text-3xl text-left tracking-wide">
               <div>
                 Buat Teman Hijrah yang{' '}
@@ -165,11 +162,20 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto">
-          <div className="px-4 sm:px-0 sm:pl-4 sm:mr-16">
+          <div className="hidden sm:block sm:px-0 sm:pl-4 sm:mr-16">
             <Image
               src="/img/tanto7.png"
-              height={!isMobile ? 400 : 200}
-              width={!isMobile ? 260 : 130}
+              height="400"
+              width="260"
+              alt=""
+              objectFit="contain"
+            />
+          </div>
+          <div className="block sm:hidden px-4">
+            <Image
+              src="/img/tanto7.png"
+              height="200"
+              width="130"
               alt=""
               objectFit="contain"
             />
