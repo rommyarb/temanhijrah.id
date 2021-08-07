@@ -7,14 +7,22 @@ interface Props {
   warna?: string
   ikon?: string
   size?: 'sm' | 'base'
+  notFullInMobile?: boolean
 }
 
-const Tombol: React.FC<Props> = ({ label, warna, ikon, size }) =>
+const Tombol: React.FC<Props> = ({
+  label,
+  warna,
+  ikon,
+  size,
+  notFullInMobile,
+}) =>
   warna === 'merah' ? (
     <button
       style={{ backgroundColor: appColors.redPrimary }}
       className={[
-        'rounded-full shadow-sm focus:bg-red-300 w-full text-lg font-medium text-white space-x-2 flex flex-wrap content-center justify-center items-center',
+        'rounded-full shadow-sm focus:bg-red-300 text-base font-medium text-white space-x-2 flex flex-wrap content-center justify-center items-center',
+        notFullInMobile ? 'px-10' : 'w-full',
         size === 'sm' && 'h-8',
         size !== 'sm' && 'h-11',
         size === 'sm' ? 'md:w-40' : 'md:w-56',
@@ -31,7 +39,8 @@ const Tombol: React.FC<Props> = ({ label, warna, ikon, size }) =>
     <button
       style={{ backgroundColor: appColors.gray1 }}
       className={[
-        'rounded-full shadow-sm focus:bg-red-300 w-full text-lg font-medium text-white space-x-2 flex flex-wrap content-center justify-center items-center',
+        'rounded-full shadow-sm focus:bg-red-300 text-base font-medium text-white space-x-2 flex flex-wrap content-center justify-center items-center',
+        notFullInMobile ? 'px-10' : 'w-full',
         size === 'sm' && 'h-8',
         size !== 'sm' && 'h-11',
         size === 'sm' ? 'md:w-40' : 'md:w-56',

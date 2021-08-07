@@ -1,20 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
+import React from 'react'
 import Head from 'next/head'
+import { useWindowWidth } from '@react-hook/window-size'
+import Select from 'react-select'
+import Image from 'next/image'
+//
 import Container from '../components/Container'
 import Header from '../components/Header'
 import appColors from '../constants/appColors'
-import Image from 'next/image'
 import Tombol from '../components/Tombol'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
 import dataKartuMenu from '../constants/dataMenu'
-import Select from 'react-select'
+import Footer from '../components/Footer'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
   'Gerakan Aksi Peduli Teman Hijrah yang sedang diuji dengan COVID-19.'
 
 export default function Home() {
+  const windowWidth = useWindowWidth()
+  const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
   return (
     <div>
       <Head>
@@ -124,9 +130,44 @@ export default function Home() {
                 boleh ikutan 😊
               </div>
             </div>
+            <div
+              className="mt-4 tracking-wide text-sm"
+              style={{ color: appColors.gray2 }}
+            >
+              Silahkan pilih jenis bantuannya di bawah ini
+            </div>
+
+            <div className="bg-pink-200 w-full py-10 text-center mt-4">
+              🚧 Under Development
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto">
+          <div className="px-4 sm:px-0 sm:pl-4 sm:mr-16">
+            <Image
+              src="/img/tanto7.png"
+              height={!isMobile ? 400 : 200}
+              width={!isMobile ? 260 : 130}
+              alt=""
+              objectFit="contain"
+            />
+          </div>
+          <div className="px-4 md:px-0 md:ml-4">
+            <div className="sm:font-semibold font-medium text-2xl sm:text-4xl">
+              InsyaAllah laporan program kami akan selalu update
+            </div>
+            <div className="mt-6">
+              <Tombol
+                notFullInMobile={true}
+                label="Lihat Laporan"
+                warna="merah"
+              />
+            </div>
           </div>
         </div>
       </Container>
+      <Footer />
     </div>
   )
 }
