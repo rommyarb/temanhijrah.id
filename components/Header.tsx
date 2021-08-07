@@ -1,6 +1,7 @@
 import React from 'react'
-import { ComponentProps } from '../types/componentProps'
 import Image from 'next/image'
+import Link from 'next/link'
+import { ComponentProps } from '../types/componentProps'
 
 const Header: React.FC<ComponentProps> = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false)
@@ -10,20 +11,26 @@ const Header: React.FC<ComponentProps> = () => {
         className="px-4 mx-auto max-w-4xl flex items-center justify-between"
         style={{ height: 70 }}
       >
-        <Image
-          src="/img/logo.png"
-          height="30px"
-          width="100px"
-          objectFit="contain"
-          alt="Logo"
-        />
+        <Link href="/" passHref>
+          <div className="cursor-pointer flex justify-center">
+            <Image
+              src="/img/logo.png"
+              height="30px"
+              width="100px"
+              objectFit="contain"
+              alt="Logo"
+            />
+          </div>
+        </Link>
         <div className="h-full hidden md:flex">
           <div className="px-6 h-full flex items-center hover:bg-red-100 cursor-pointer">
             Mau Membantu
           </div>
-          <div className="px-6 h-full flex items-center hover:bg-red-100 cursor-pointer">
-            Mau dibantu
-          </div>
+          <Link href="/butuh-dibantu" passHref>
+            <div className="px-6 h-full flex items-center hover:bg-red-100 cursor-pointer">
+              Butuh dibantu
+            </div>
+          </Link>
         </div>
         {!showMobileMenu && (
           <div className="md:hidden">
