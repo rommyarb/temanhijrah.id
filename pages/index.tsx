@@ -3,6 +3,7 @@ import React from 'react'
 import Head from 'next/head'
 import Select from 'react-select'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 //
 import Container from '../components/Container'
 import Header from '../components/Header'
@@ -21,6 +22,7 @@ const DESCRIPTION =
   'Gerakan Aksi Peduli Teman Hijrah yang sedang diuji dengan COVID-19.'
 
 export default function Home() {
+  const router = useRouter()
   return (
     <div>
       <Head>
@@ -52,6 +54,7 @@ export default function Home() {
                   label="Butuh dibantu"
                   warna="merah"
                   ikon="/img/icon/hotel.svg"
+                  onClick={() => router.push('/butuh-dibantu')}
                 />
                 <div className="w-5 h-3 sm:h-0"></div>
                 <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
@@ -130,10 +133,13 @@ export default function Home() {
                 boleh ikutan 😊
               </div>
             </div>
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center" >
-              <Accordion icon="/img/icon/light.svg" title="Bantu Informasi" >
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center">
+              <Accordion icon="/img/icon/light.svg" title="Bantu Informasi">
                 <div
-                  style={{ borderRadius: 10, backgroundColor: appColors.redLight }}
+                  style={{
+                    borderRadius: 10,
+                    backgroundColor: appColors.redLight,
+                  }}
                   className="p-6 md:p-4 w-full md:w-auto flex items-center justify-between"
                 >
                   <div
@@ -142,7 +148,7 @@ export default function Home() {
                   >
                     Info Pengisian Oxygen Ready Stock
                   </div>
-                  <div className="p-1 w-40 flex justify-center rounded-full cursor-pointer border border-red-400" >
+                  <div className="p-1 w-40 flex justify-center rounded-full cursor-pointer border border-red-400">
                     Hubungi
                   </div>
                 </div>

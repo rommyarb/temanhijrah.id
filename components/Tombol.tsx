@@ -8,6 +8,8 @@ interface Props {
   ikon?: string
   size?: 'sm' | 'base'
   notFullInMobile?: boolean
+  onClick?: () => void
+  full?: boolean
 }
 
 const Tombol: React.FC<Props> = ({
@@ -16,12 +18,16 @@ const Tombol: React.FC<Props> = ({
   ikon,
   size,
   notFullInMobile,
+  onClick,
+  full,
 }) =>
   warna === 'merah' ? (
     <button
+      onClick={onClick}
       style={{ backgroundColor: appColors.redPrimary }}
       className={[
         'rounded-full shadow-sm focus:bg-red-300 text-base font-medium text-white space-x-2 flex flex-wrap content-center justify-center items-center',
+        full && 'w-full',
         notFullInMobile ? 'px-10' : 'w-full',
         size === 'sm' && 'h-8',
         size !== 'sm' && 'h-11',
@@ -37,9 +43,11 @@ const Tombol: React.FC<Props> = ({
     </button>
   ) : (
     <button
+      onClick={onClick}
       style={{ backgroundColor: appColors.gray1 }}
       className={[
         'rounded-full shadow-sm focus:bg-red-300 text-base font-medium text-white space-x-2 flex flex-wrap content-center justify-center items-center',
+        full && 'w-full',
         notFullInMobile ? 'px-10' : 'w-full',
         size === 'sm' && 'h-8',
         size !== 'sm' && 'h-11',
