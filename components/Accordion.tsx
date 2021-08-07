@@ -6,9 +6,10 @@ interface Props {
   children?: string | JSX.Element | JSX.Element[]
   title?: string
   icon?: string
+  isMobile?: boolean
 }
 
-const Accordion: React.FC<Props> = ({ children, title, icon }) => {
+const Accordion: React.FC<Props> = ({ children, title, icon, isMobile }) => {
 
   const [isShowing, setIsShowing] = useState(false);
   const [height, setHeight] = useState('0px')
@@ -20,21 +21,26 @@ const Accordion: React.FC<Props> = ({ children, title, icon }) => {
   };
 
   return (
-    <div className="shadow-lg w-full rounded p-4">
+    <div 
+      style={{boxShadow: '0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2)'}} 
+      className="w-full rounded p-4 sm:py-6 sm:px-12"
+    >
       <button className="w-full flex flex-wrap items-center justify-between" onClick={toggle} type="button">
         <div className="flex flex-wrap items-center" >
           {icon && (
-            <div className="mr-3">
-              <Image src={icon} height="20px" width="20px" alt="Icon" />
+            <div className="mr-2 sm:mr-4">
+              <Image src={icon} height={isMobile ? "24px" : "30px"} width={isMobile ? "16px" : "20px"} alt="Icon" />
             </div>
           )}
-          <p className="font-semibold text-lg">{title}</p>
+          <p className="font-semibold text-base sm:text-xl">{title}</p>
         </div>
-        <div className={[
-          'p-1 transform duration-500 ease-in-out',
-          isShowing && 'transform duration-500 ease-in-out rotate-180',
-        ].join(' ')}>
-          <Image src="/img/icon/arrow_drop_down.svg" height="24px" width="24px" alt="Icon" />
+        <div 
+          className={[
+            'transform duration-500 ease-in-out',
+            isShowing && 'transform duration-500 ease-in-out rotate-180',
+          ].join(' ')}
+        >
+          <Image src="/img/icon/arrow_drop_down.svg" height="10px" width="10px" alt="Icon" />
         </div>
       </button>
       <div
