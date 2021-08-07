@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Head from 'next/head'
-import { useWindowWidth } from '@react-hook/window-size'
 import Select from 'react-select'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useWindowWidth } from '@react-hook/window-size'
 //
 import Container from '../components/Container'
 import Header from '../components/Header'
@@ -22,6 +23,7 @@ const DESCRIPTION =
   'Gerakan Aksi Peduli Teman Hijrah yang sedang diuji dengan COVID-19.'
 
 export default function Home() {
+  const router = useRouter()
   const windowWidth = useWindowWidth()
   const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
   return (
@@ -55,6 +57,7 @@ export default function Home() {
                   label="Butuh dibantu"
                   warna="merah"
                   ikon="/img/icon/hotel.svg"
+                  onClick={() => router.push('/butuh-dibantu')}
                 />
                 <div className="w-5 h-3 sm:h-0"></div>
                 <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
@@ -239,11 +242,20 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto">
-          <div className="px-4 sm:px-0 sm:pl-4 sm:mr-16">
+          <div className="hidden sm:block sm:px-0 sm:pl-4 sm:mr-16">
             <Image
               src="/img/tanto7.png"
-              height={!isMobile ? 400 : 200}
-              width={!isMobile ? 260 : 130}
+              height="400"
+              width="260"
+              alt=""
+              objectFit="contain"
+            />
+          </div>
+          <div className="block sm:hidden px-4">
+            <Image
+              src="/img/tanto7.png"
+              height="200"
+              width="130"
               alt=""
               objectFit="contain"
             />
