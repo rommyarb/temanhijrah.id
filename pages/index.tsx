@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Select from 'react-select'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useWindowWidth } from '@react-hook/window-size'
 //
 import Container from '../components/Container'
 import Header from '../components/Header'
@@ -14,7 +15,7 @@ import Accordion from '../components/Accordion'
 import styles from '../styles/Home.module.css'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
-import dataKartuMenu from '../constants/dataMenu'
+import {dataMenu, dataBantu} from '../constants/datas'
 import Footer from '../components/Footer'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
@@ -23,6 +24,8 @@ const DESCRIPTION =
 
 export default function Home() {
   const router = useRouter()
+  const windowWidth = useWindowWidth()
+  const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
   return (
     <div>
       <Head>
@@ -86,7 +89,7 @@ export default function Home() {
             <span className="font-medium">JABODETABEK</span>
           </div>
           <div className="max-w-4xl grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-2 sm:gap-4 mt-6">
-            {dataKartuMenu?.map((val, index) => (
+            {dataMenu?.map((val, index) => (
               <KartuMenu
                 key={`kartuMenu-${index}`}
                 ikon={val.ikon}
@@ -123,8 +126,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-4xl w-full px-4 mt-16 sm:mt-28">
-            <div className="sm:max-w-lg sm:flex mt-7 sm:mt-0 items-center font-medium text-2xl sm:text-3xl text-left tracking-wide">
+          <div className="max-w-4xl w-full px-4 mt-16 sm:mt-36">
+            <div className="sm:max-w-2xl sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
               <div>
                 Buat Teman Hijrah yang{' '}
                 <span style={{ color: appColors.redPrimary }}>
@@ -133,36 +136,107 @@ export default function Home() {
                 boleh ikutan 😊
               </div>
             </div>
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center">
-              <Accordion icon="/img/icon/light.svg" title="Bantu Informasi">
-                <div
-                  style={{
-                    borderRadius: 10,
-                    backgroundColor: appColors.redLight,
-                  }}
-                  className="p-6 md:p-4 w-full md:w-auto flex items-center justify-between"
-                >
-                  <div
-                    style={{ color: appColors.gray3 }}
-                    className="text-sm sm:w-10/12 tracking-wide"
-                  >
-                    Info Pengisian Oxygen Ready Stock
-                  </div>
-                  <div className="p-1 w-40 flex justify-center rounded-full cursor-pointer border border-red-400">
-                    Hubungi
-                  </div>
-                </div>
-              </Accordion>
-            </div>
             <div
-              className="mt-4 tracking-wide text-sm"
+              className="mt-4 sm:mt-6 tracking-wide text-sm"
               style={{ color: appColors.gray2 }}
             >
               Silahkan pilih jenis bantuannya di bawah ini
             </div>
-
-            <div className="bg-pink-200 w-full py-10 text-center mt-4">
-              🚧 Under Development
+            <div className="mt-4 sm:mt-6" >
+              <Accordion icon={dataBantu.bantuInformasi.icon} title={dataBantu.bantuInformasi.title} isMobile={isMobile} >
+                {dataBantu.bantuInformasi.data.map((item, index) => (
+                  <div
+                    key={`bantu-informasi-${index}`}
+                    style={{ backgroundColor: appColors.redLight }}
+                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
+                  >
+                    <div
+                      style={{ color: appColors.gray3 }}
+                      className="text-sm tracking-wide pr-2"
+                    >
+                      {item.title}
+                    </div>
+                    <div
+                      onClick={() => window.open(item.link, "_blank")}
+                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                    >
+                      Hubungi
+                    </div>
+                  </div>
+                ))}
+              </Accordion>
+            </div>
+            <div className="mt-4 sm:mt-6" >
+              <Accordion icon={dataBantu.bantuTenaga.icon} title={dataBantu.bantuTenaga.title} isMobile={isMobile} >
+                {dataBantu.bantuTenaga.data.map((item, index) => (
+                  <div
+                    key={`bantu-informasi-${index}`}
+                    style={{ backgroundColor: appColors.redLight }}
+                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
+                  >
+                    <div
+                      style={{ color: appColors.gray3 }}
+                      className="text-sm tracking-wide pr-2"
+                    >
+                      {item.title}
+                    </div>
+                    <div
+                      onClick={() => window.open(item.link, "_blank")}
+                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                    >
+                      Hubungi
+                    </div>
+                  </div>
+                ))}
+              </Accordion>
+            </div>
+            <div className="mt-4 sm:mt-6" >
+              <Accordion icon={dataBantu.bantuBarang.icon} title={dataBantu.bantuBarang.title} isMobile={isMobile} >
+                {dataBantu.bantuBarang.data.map((item, index) => (
+                  <div
+                    key={`bantu-informasi-${index}`}
+                    style={{ backgroundColor: appColors.redLight }}
+                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
+                  >
+                    <div
+                      style={{ color: appColors.gray3 }}
+                      className="text-sm tracking-wide pr-2"
+                    >
+                      {item.title}
+                    </div>
+                    <div
+                      onClick={() => window.open(item.link, "_blank")}
+                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                    >
+                      Hubungi
+                    </div>
+                  </div>
+                ))}
+              </Accordion>
+            </div>
+            <div className="mt-4 sm:mt-6" >
+              <Accordion icon={dataBantu.bantuDana.icon} title={dataBantu.bantuDana.title} isMobile={isMobile} >
+                {dataBantu.bantuDana.data.map((item, index) => (
+                  <div
+                    key={`bantu-informasi-${index}`}
+                    style={{ backgroundColor: appColors.redLight }}
+                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
+                  >
+                    <div
+                      style={{ color: appColors.gray3 }}
+                      className="text-sm tracking-wide pr-2"
+                    >
+                      {item.title}
+                    </div>
+                    <div
+                      // onClick={() => window.open(item.link, "_blank")}
+                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                    >
+                      Isi Form
+                    </div>
+                  </div>
+                ))}
+              </Accordion>
             </div>
           </div>
         </div>
