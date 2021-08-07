@@ -1,52 +1,49 @@
-import React, { useState } from 'react'
+import Image from 'next/image';
+import React, { useState, useRef } from 'react'
 import { ComponentProps } from '../types/componentProps'
 
 interface Props {
   children?: string | JSX.Element | JSX.Element[]
   title?: string
-  content?: string
+  icon?: string
 }
 
-const Accordion: React.FC<Props> = ({ children, title, content }) => {
+const Accordion: React.FC<Props> = ({ children, title, icon }) => {
 
   const [isShowing, setIsShowing] = useState(false);
+  const [height, setHeight] = useState('0px')
+  const contentSpace = useRef<HTMLInputElement>(null)
 
   const toggle = () => {
     setIsShowing(!isShowing);
+    setHeight(isShowing ? '0px' : `${contentSpace?.current?.scrollHeight}px`)
   };
 
   return (
-    // <button className="bg-red-200 px-2 py-1 rounded-md shadow-sm focus:bg-red-300 m-1">
-    //   {children}
-    // </button>
-    <div
-      style={{
-        width: "100%",
-        borderRadius: 8,
-        boxShadow: "0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2)"
-      }}
-    >
-      <button
-        style={{
-          width: "100%",
-          position: "relative",
-          textAlign: "left",
-          padding: "4px",
-          border: "none",
-          background: "transparent",
-          outline: "none",
-          cursor: "pointer"
-        }}
-        onClick={toggle}
-        type="button"
-      >
-        <p>{title}</p>
+    <div className="shadow-lg w-full rounded p-4">
+      <button className="w-full flex flex-wrap items-center justify-between" onClick={toggle} type="button">
+        <div className="flex flex-wrap items-center" >
+          {icon && (
+            <div className="mr-3">
+              <Image src={icon} height="20px" width="20px" alt="Icon" />
+            </div>
+          )}
+          <p className="font-semibold text-lg">{title}</p>
+        </div>
+        <div className={[
+          'p-1 transform duration-500 ease-in-out',
+          isShowing && 'transform duration-500 ease-in-out rotate-180',
+        ].join(' ')}>
+          <Image src="/img/icon/arrow_drop_down.svg" height="24px" width="24px" alt="Icon" />
+        </div>
       </button>
       <div
-        style={{ display: isShowing ? "block" : "none", padding: "5px" }}
+        ref={contentSpace}
+        style={{ maxHeight: `${height}` }}
+        className="overflow-auto overflow-y-hidden transition-max-height duration-500 ease-in-out"
         
       >
-        {content}
+        {children}
       </div>
     </div>
   )

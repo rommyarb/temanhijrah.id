@@ -7,7 +7,7 @@ const Header: React.FC<ComponentProps> = () => {
   return (
     <div className="shadow-md">
       <div
-        className="px-4 mx-auto max-w-5xl flex items-center justify-between"
+        className="px-4 mx-auto max-w-4xl flex items-center justify-between"
         style={{ height: 70 }}
       >
         <Image
@@ -25,22 +25,24 @@ const Header: React.FC<ComponentProps> = () => {
             Mau dibantu
           </div>
         </div>
-        <div className="md:hidden">
-          <div
-            className="hover:bg-red-100 cursor-pointer p-1 flex items-center rounded-md"
-            onClick={() => {
-              setShowMobileMenu(true)
-            }}
-          >
-            <Image
-              src="/img/icon/menu.png"
-              alt="Menu"
-              height="20"
-              width="20"
-              objectFit="contain"
-            />
+        {!showMobileMenu && (
+          <div className="md:hidden">
+            <div
+              className="hover:bg-red-100 cursor-pointer p-1 flex items-center rounded-md"
+              onClick={() => {
+                setShowMobileMenu(true)
+              }}
+            >
+              <Image
+                src="/img/icon/menu.png"
+                alt="Menu"
+                height="20"
+                width="20"
+                objectFit="contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {showMobileMenu && (
@@ -48,12 +50,12 @@ const Header: React.FC<ComponentProps> = () => {
           className="absolute top-0 left-0 w-full h-full z-10"
           style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
         >
-          <div className="py-3 h-full w-3/4 bg-white">
-            <div className="px-5 flex items-center w-full">
+          <div className="py-3 h-full w-full bg-white">
+            <div className="pt-4 px-5 flex items-center w-full">
               <Image
                 src="/img/logo.png"
-                height="100px"
-                width="300px"
+                height="50px"
+                width="220px"
                 objectFit="contain"
                 alt="Logo"
               />
@@ -64,7 +66,7 @@ const Header: React.FC<ComponentProps> = () => {
                 }}
               >
                 <Image
-                  src="/img/icon/clear.png"
+                  src="/img/icon/clear.svg"
                   height="30px"
                   width="30px"
                   objectFit="contain"
@@ -72,9 +74,13 @@ const Header: React.FC<ComponentProps> = () => {
                 />
               </div>
             </div>
-            <div className="h-3 border-b mb-3"></div>
-            <div className="px-5 text-lg py-2 hover:bg-red-100">Butuh dibantu</div>
-            <div className="px-5 text-lg py-2 hover:bg-red-100">Mau membantu</div>
+            <div className="mx-5 h-3 mb-3"></div>
+            <div className="px-5 text-lg py-2 hover:bg-red-100">
+              Butuh dibantu
+            </div>
+            <div className="px-5 text-lg py-2 hover:bg-red-100">
+              Mau membantu
+            </div>
           </div>
         </div>
       )}
