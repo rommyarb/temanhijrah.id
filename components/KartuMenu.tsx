@@ -10,7 +10,7 @@ const cardSizeHeight = 200
 const KartuMenu: React.FC<KartuMenuProps> = ({ ikon, judul, deskipsi, toggleModal }) => {
   return (
     <div
-      className="shadow border-t rounded-lg p-4 flex items-end"
+      className="shadow border-t rounded-lg p-4 flex items-end bg-white"
       style={{
         height: cardSizeHeight,
         width: cardSizeWidth,

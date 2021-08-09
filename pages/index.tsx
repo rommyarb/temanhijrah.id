@@ -15,9 +15,9 @@ import Accordion from '../components/Accordion'
 import styles from '../styles/Home.module.css'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
-import {dataMenu, dataBantu} from '../constants/datas'
+import { dataMenu, dataBantu } from '../constants/datas'
 import Footer from '../components/Footer'
-import Modal from '../components/Modal';
+import Modal from '../components/Modal'
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
@@ -27,14 +27,14 @@ export default function Home() {
   const router = useRouter()
   const windowWidth = useWindowWidth()
   const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
-  const [isModal, setModal] = React.useState(false);
+  const [isModal, setModal] = React.useState(false)
 
   const _handleClickDetail = () => {
-    setModal(true);
+    setModal(true)
   }
 
   const _handleCloseModal = () => {
-    setModal(false);
+    setModal(false)
   }
 
   return (
@@ -43,25 +43,23 @@ export default function Home() {
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
         <link rel="icon" href="/favicon.ico" />
-      </Head> 
-      <Modal isOpen={ isModal } closeModal={_handleCloseModal}/>
+      </Head>
+      <Modal isOpen={isModal} closeModal={_handleCloseModal} />
       <Container>
         <Header />
         <div id="section-1" className="mt-1 sm:pt-10">
           <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center">
             <div className="px-4">
               <div className="text-3xl sm:text-5xl font-bold mb-5">
-                Bersama Aksi Peduli
-                <br />
-                #TemanHijrah
+                Senang Susah Kita Sama-Sama
               </div>
               <div
                 style={{ color: appColors.gray3 }}
                 className="text-sm mb-8 sm:w-10/12 tracking-wide"
               >
-                Karena senang susah kita sama-sama untuk teman yang ISOMAN, ada
-                program catering, distribusi obat &amp; vitamin gerakan isi
-                tabung oksigen, telekonsultasi
+                Aksi ini didedikasikan untuk menjadi jembatan antara kamu yang
+                sedang ISOMAN (isolasi mandiri) dan #TemanHijrahmu yang mau
+                membantu.
               </div>
               <div className="sm:flex sm:items-center">
                 <Tombol
@@ -85,19 +83,29 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-8 mx-auto flex flex-col items-center">
+        <div
+          className="mx-auto flex flex-col items-center pt-8 sm:pt-20"
+          style={{
+            backgroundImage: 'url(/img/wave_bg.svg)',
+            backgroundSize: '100%',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
           <div className="sm:flex mt-7 sm:mt-0 items-center font-medium text-2xl sm:text-3xl text-center tracking-wide">
-            <div>Teman Hijrah yang</div>
-            <span className="hidden sm:inline-block">&nbsp;</span>
-            <div style={{ color: appColors.redPrimary }}>butuh dibantu</div>
+            <div>
+              Program{' '}
+              <span style={{ color: appColors.redPrimary }}>Al-Ikhlas</span>
+            </div>
           </div>
           <div
-            className="text-center max-w-2xl mt-5 tracking-wide text-sm px-4"
+            className="text-center max-w-4xl mt-5 tracking-wide text-sm px-4"
             style={{ color: appColors.gray2 }}
           >
-            InsyaAllah kami akan siap membantu teman-teman yang lagi ISOMAN dan
-            juga membutuhkan bantuan selama PPKM sekitaran{' '}
-            <span className="font-medium">JABODETABEK</span>
+            Ini adalah non-profit movement, dimana seluruh tim inti kami tidak
+            mencari keuntungan apapun dalam menyediakan kebutuhan kalian yang
+            sedang ISOMAN. Sedangkan untuk biaya operasional, kami berusaha
+            menekan seminimal dan seefisien mungkin. Dan dari survey kami, 5 hal
+            ini adalah apa yang paling dibutuhkan pasien saat ISOMAN.
           </div>
           <div className="max-w-4xl grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-2 sm:gap-4 mt-6">
             {dataMenu?.map((val, index) => (
@@ -154,8 +162,12 @@ export default function Home() {
             >
               Silahkan pilih jenis bantuannya di bawah ini
             </div>
-            <div className="mt-4 sm:mt-6" >
-              <Accordion icon={dataBantu.bantuInformasi.icon} title={dataBantu.bantuInformasi.title} isMobile={isMobile} >
+            <div className="mt-4 sm:mt-6">
+              <Accordion
+                icon={dataBantu.bantuInformasi.icon}
+                title={dataBantu.bantuInformasi.title}
+                isMobile={isMobile}
+              >
                 {dataBantu.bantuInformasi.data.map((item, index) => (
                   <div
                     key={`bantu-informasi-${index}`}
@@ -169,7 +181,7 @@ export default function Home() {
                       {item.title}
                     </div>
                     <div
-                      onClick={() => window.open(item.link, "_blank")}
+                      onClick={() => window.open(item.link, '_blank')}
                       className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
                     >
                       Hubungi
@@ -178,8 +190,12 @@ export default function Home() {
                 ))}
               </Accordion>
             </div>
-            <div className="mt-4 sm:mt-6" >
-              <Accordion icon={dataBantu.bantuTenaga.icon} title={dataBantu.bantuTenaga.title} isMobile={isMobile} >
+            <div className="mt-4 sm:mt-6">
+              <Accordion
+                icon={dataBantu.bantuTenaga.icon}
+                title={dataBantu.bantuTenaga.title}
+                isMobile={isMobile}
+              >
                 {dataBantu.bantuTenaga.data.map((item, index) => (
                   <div
                     key={`bantu-informasi-${index}`}
@@ -193,7 +209,7 @@ export default function Home() {
                       {item.title}
                     </div>
                     <div
-                      onClick={() => window.open(item.link, "_blank")}
+                      onClick={() => window.open(item.link, '_blank')}
                       className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
                     >
                       Hubungi
@@ -202,8 +218,12 @@ export default function Home() {
                 ))}
               </Accordion>
             </div>
-            <div className="mt-4 sm:mt-6" >
-              <Accordion icon={dataBantu.bantuBarang.icon} title={dataBantu.bantuBarang.title} isMobile={isMobile} >
+            <div className="mt-4 sm:mt-6">
+              <Accordion
+                icon={dataBantu.bantuBarang.icon}
+                title={dataBantu.bantuBarang.title}
+                isMobile={isMobile}
+              >
                 {dataBantu.bantuBarang.data.map((item, index) => (
                   <div
                     key={`bantu-informasi-${index}`}
@@ -217,7 +237,7 @@ export default function Home() {
                       {item.title}
                     </div>
                     <div
-                      onClick={() => window.open(item.link, "_blank")}
+                      onClick={() => window.open(item.link, '_blank')}
                       className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
                     >
                       Hubungi
@@ -226,8 +246,12 @@ export default function Home() {
                 ))}
               </Accordion>
             </div>
-            <div className="mt-4 sm:mt-6" >
-              <Accordion icon={dataBantu.bantuDana.icon} title={dataBantu.bantuDana.title} isMobile={isMobile} >
+            <div className="mt-4 sm:mt-6">
+              <Accordion
+                icon={dataBantu.bantuDana.icon}
+                title={dataBantu.bantuDana.title}
+                isMobile={isMobile}
+              >
                 {dataBantu.bantuDana.data.map((item, index) => (
                   <div
                     key={`bantu-informasi-${index}`}
