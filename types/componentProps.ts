@@ -6,4 +6,10 @@ export interface KartuMenuProps {
   ikon:string,
   judul:string,
   deskipsi:string,
+  toggleModal: any,
+}
+
+export interface Modals {
+  isOpen: boolean,
+  closeModal: any,
 }

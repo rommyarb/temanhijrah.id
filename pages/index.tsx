@@ -17,6 +17,7 @@ import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
 import {dataMenu, dataBantu} from '../constants/datas'
 import Footer from '../components/Footer'
+import Modal from '../components/Modal';
 
 const TITLE = 'Aksi Peduli #TemanHijrah'
 const DESCRIPTION =
@@ -26,14 +27,24 @@ export default function Home() {
   const router = useRouter()
   const windowWidth = useWindowWidth()
   const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
+  const [isModal, setModal] = React.useState(false);
+
+  const _handleClickDetail = () => {
+    setModal(true);
+  }
+
+  const _handleCloseModal = () => {
+    setModal(false);
+  }
+
   return (
     <div>
       <Head>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      </Head> 
+      <Modal isOpen={ isModal } closeModal={_handleCloseModal}/>
       <Container>
         <Header />
         <div id="section-1" className="mt-1 sm:pt-10">
@@ -95,6 +106,7 @@ export default function Home() {
                 ikon={val.ikon}
                 judul={val.judul}
                 deskipsi={val.deskripsi}
+                toggleModal={_handleClickDetail}
               />
             ))}
           </div>
