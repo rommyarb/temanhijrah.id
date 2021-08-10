@@ -139,7 +139,7 @@ export default function Home() {
                 style={{
                   borderRadius: 10,
                 }}
-                className="py-6 px-4 md:px-28 md:p-4 w-full md:items-center mt-6 bg-white shadow-lg border"
+                className="py-6 px-4 md:px-28 md:py-8 w-full md:items-center mt-6 bg-white shadow-lg border"
               >
                 <div
                   style={{ color: appColors.gray2 }}

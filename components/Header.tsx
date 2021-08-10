@@ -2,6 +2,26 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ComponentProps } from '../types/componentProps'
+import appColors from '../constants/appColors'
+
+const menuList = [
+  {
+    label: 'Program Kami',
+    onClick: () => {},
+  },
+  {
+    label: 'Butuh dibantu',
+    type: 'link',
+  },
+  {
+    label: 'Mau Membantu',
+    onClick: () => {},
+  },
+  {
+    label: 'Laporan',
+    onClick: () => {},
+  },
+]
 
 const Header: React.FC<ComponentProps> = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false)
@@ -23,14 +43,34 @@ const Header: React.FC<ComponentProps> = () => {
           </div>
         </Link>
         <div className="h-full hidden md:flex">
-          <div className="px-6 h-full flex items-center hover:bg-red-100 cursor-pointer">
-            Mau Membantu
-          </div>
-          <Link href="/butuh-dibantu" passHref>
-            <div className="px-6 h-full flex items-center hover:bg-red-100 cursor-pointer">
-              Butuh dibantu
-            </div>
-          </Link>
+          {menuList.map((m, i) => {
+            if (m.type === 'link') {
+              return (
+                <Link href="/butuh-dibantu" passHref key={`header-menu-${i}`}>
+                  <div
+                    style={{ color: appColors.gray1 }}
+                    className="text-sm px-6 h-full flex items-center hover:bg-red-100 cursor-pointer"
+                  >
+                    {m.label}
+                  </div>
+                </Link>
+              )
+            }
+            return (
+              <div
+                key={`header-menu=${i}`}
+                style={{ color: appColors.gray1 }}
+                className="text-sm px-6 h-full flex items-center hover:bg-red-100 cursor-pointer"
+                onClick={() => {
+                  if (m.onClick) {
+                    m.onClick()
+                  }
+                }}
+              >
+                {m.label}
+              </div>
+            )
+          })}
         </div>
         {!showMobileMenu && (
           <div className="md:hidden">
@@ -82,12 +122,30 @@ const Header: React.FC<ComponentProps> = () => {
               </div>
             </div>
             <div className="mx-5 h-3 mb-3"></div>
-            <div className="px-5 text-lg py-2 hover:bg-red-100">
-              Butuh dibantu
-            </div>
-            <div className="px-5 text-lg py-2 hover:bg-red-100">
-              Mau membantu
-            </div>
+            {menuList.map((m, i) => {
+              if (m.type === 'link') {
+                return (
+                  <Link href="/butuh-dibantu" passHref key={`header-menu-${i}`}>
+                    <div className="px-5 text-lg py-2 hover:bg-red-100 cursor-pointer">
+                      {m.label}
+                    </div>
+                  </Link>
+                )
+              }
+              return (
+                <div
+                  key={`header-menu=${i}`}
+                  className="px-5 text-lg py-2 hover:bg-red-100 cursor-pointer"
+                  onClick={() => {
+                    if (m.onClick) {
+                      m.onClick()
+                    }
+                  }}
+                >
+                  {m.label}
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
