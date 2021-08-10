@@ -26,6 +26,11 @@ import Footer from '../components/Footer'
 import Modal from '../components/Modal'
 
 export default function Home() {
+  const programRef = React.useRef<HTMLDivElement>(null)
+  const mauDibantuRef = React.useRef<HTMLDivElement>(null)
+  const mauMembantuRef = React.useRef<HTMLDivElement>(null)
+  const laporanRef = React.useRef<HTMLDivElement>(null)
+
   const router = useRouter()
   const windowWidth = useWindowWidth()
   const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
@@ -39,6 +44,33 @@ export default function Home() {
     setModal(false)
   }
 
+  const menuList = [
+    {
+      label: 'Program Kami',
+      onClick: () => {
+        programRef.current?.scrollIntoView({ behavior: 'smooth' })
+      },
+    },
+    {
+      label: 'Butuh dibantu',
+      onClick: () => {
+        mauDibantuRef.current?.scrollIntoView({ behavior: 'smooth' })
+      },
+    },
+    {
+      label: 'Mau Membantu',
+      onClick: () => {
+        mauMembantuRef.current?.scrollIntoView({ behavior: 'smooth' })
+      },
+    },
+    {
+      label: 'Laporan',
+      onClick: () => {
+        laporanRef.current?.scrollIntoView({ behavior: 'smooth' })
+      },
+    },
+  ]
+
   return (
     <div>
       <Head>
@@ -48,7 +80,7 @@ export default function Home() {
       </Head>
       <Modal isOpen={isModal} closeModal={_handleCloseModal} />
       <Container>
-        <Header />
+        <Header menuList={menuList} />
         <div className="mt-1 sm:pt-10 section-bg">
           <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center">
             <div className="px-4">
@@ -68,10 +100,23 @@ export default function Home() {
                   label="Butuh dibantu"
                   warna="merah"
                   ikon="/img/icon/hotel.svg"
-                  onClick={() => router.push('/butuh-dibantu')}
+                  onClick={() => {
+                    // router.push('/butuh-dibantu')
+                    mauDibantuRef.current?.scrollIntoView({
+                      behavior: 'smooth',
+                    })
+                  }}
                 />
                 <div className="w-5 h-3 sm:h-0"></div>
-                <Tombol label="Mau membantu" ikon="/img/icon/hospital.svg" />
+                <Tombol
+                  label="Mau membantu"
+                  ikon="/img/icon/hospital.svg"
+                  onClick={() => {
+                    mauMembantuRef.current?.scrollIntoView({
+                      behavior: 'smooth',
+                    })
+                  }}
+                />
               </div>
             </div>
             <div className="order-first sm:order-last px-20 sm:px-0">
@@ -86,6 +131,7 @@ export default function Home() {
           </div>
         </div>
         <div
+          ref={programRef}
           className="mx-auto flex flex-col items-center pt-8 sm:pt-20"
           style={{
             backgroundImage: 'url(/img/wave_bg.svg)',
@@ -121,6 +167,7 @@ export default function Home() {
             ))}
           </div>
           <div
+            ref={mauDibantuRef}
             className=" w-full px-4 mt-16 sm:mt-36 py-12"
             style={{ backgroundColor: appColors.redLightBg }}
           >
@@ -174,6 +221,7 @@ export default function Home() {
           </div>
 
           <div
+            ref={mauMembantuRef}
             className="w-full"
             style={{
               backgroundImage: 'url(/img/bubble1.svg)',
@@ -227,7 +275,10 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto">
+            <div
+              ref={laporanRef}
+              className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto"
+            >
               <div className="hidden sm:block sm:px-0 sm:pl-4 sm:mr-16">
                 <Image
                   src="/img/tanto7.png"

@@ -1,29 +1,17 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ComponentProps } from '../types/componentProps'
 import appColors from '../constants/appColors'
 
-const menuList = [
-  {
-    label: 'Program Kami',
-    onClick: () => {},
-  },
-  {
-    label: 'Butuh dibantu',
-    type: 'link',
-  },
-  {
-    label: 'Mau Membantu',
-    onClick: () => {},
-  },
-  {
-    label: 'Laporan',
-    onClick: () => {},
-  },
-]
+interface Props {
+  menuList: {
+    label: string
+    type?: string
+    onClick?: () => void
+  }[]
+}
 
-const Header: React.FC<ComponentProps> = () => {
+const Header: React.FC<Props> = ({ menuList }) => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false)
   return (
     <div className="shadow-md">
@@ -140,6 +128,7 @@ const Header: React.FC<ComponentProps> = () => {
                     if (m.onClick) {
                       m.onClick()
                     }
+                    setShowMobileMenu(false)
                   }}
                 >
                   {m.label}

@@ -15,3 +15,16 @@ body {
 .bintang {
   color: #ea5757;
 }
+
+#tabel-ketentuan {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#table-ketentuan thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}

@@ -50,51 +50,84 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
                       </svg>
                     </div>
                   </div>
-                  <div className="my-8">
-                    <p className="text-sm text-gray-500">
-                      ​​Seluruh program Aksi Peduli #TemanHijrah (APTH)
-                      didedikasikan bagi pasien yang terpapar Covid-19 dan
-                      sedang menjalani isolasi mandiri. Berikut adalah cakupan
-                      wilayah untuk masing-masing program:
-                    </p>
-                    <table className="text-sm text-gray-500 mt-2">
-                      <tbody>
-                        <tr>
-                          <td className="w-1/2">Program Catering</td>
-                          <td>: Seluruh wilayah Indonesia</td>
-                        </tr>
-                        <tr>
-                          <td className="w-1/2">Program Obat</td>
-                          <td>: Jabodetabek</td>
-                        </tr>
-                        <tr>
-                          <td className="w-1/2">Program Oksigen</td>
-                          <td>: Jabodetabek</td>
-                        </tr>
-                        <tr>
-                          <td className="w-1/2">Program Telerehab</td>
-                          <td>: Seluruh wilayah Indonesia</td>
-                        </tr>
-                        <tr>
-                          <td className="w-1/2">Program Ambulans</td>
-                          <td>: Jabodetabek</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div className="mt-8 mb-2 md:flex">
+                    <div className="hidden md:block">
+                      <Image
+                        width="350"
+                        height="372"
+                        src="/img/tanto6.jpeg"
+                        alt=""
+                        objectFit="contain"
+                      />
+                    </div>
+                    <div className="md:hidden block text-center">
+                      <Image
+                        width="120"
+                        height="127"
+                        src="/img/tanto6.jpeg"
+                        alt=""
+                        objectFit="contain"
+                      />
+                    </div>
+                    <div className="order-last md:order-first">
+                      <p className="text-sm text-gray-500">
+                        Seluruh program didedikasikan untuk pasian yang terpapar
+                        Covid-19 dan sedang menjalani Isolasi Mandiri. Berikut
+                        adalah cakupan wilayah untuk masing-masing program:
+                      </p>
+                      <table className="text-sm text-gray-500 mt-2">
+                        <tbody>
+                          <tr>
+                            <td className="w-1/2">Program Catering</td>
+                            <td>: Seluruh wilayah Indonesia</td>
+                          </tr>
+                          <tr>
+                            <td className="w-1/2">Program Obat</td>
+                            <td>: Jabodetabek</td>
+                          </tr>
+                          <tr>
+                            <td className="w-1/2">Program Oksigen</td>
+                            <td>: Jabodetabek</td>
+                          </tr>
+                          <tr>
+                            <td className="w-1/2">Program Telerehab</td>
+                            <td>: Seluruh wilayah Indonesia</td>
+                          </tr>
+                          <tr>
+                            <td className="w-1/2">Program Ambulans</td>
+                            <td>: Jabodetabek</td>
+                          </tr>
+                        </tbody>
+                      </table>
 
-                    <p className="text-sm text-gray-500 mt-2">
-                      Syarat dan ketentuan untuk mengikuti program APTH adalah
-                      sebagai berikut:
-                    </p>
+                      <p className="text-sm text-gray-500 mt-2 mb-4">
+                        Syarat dan ketentuan untuk bisa mendapatkan bantuan
+                        adalah sebagai berikut:
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-center mb-12 w-full h-40 sm:h-96 relative">
+
+                  <div className="flex items-center shadow-lg">
                     <Image
-                      layout="fill"
+                      width="1200px"
+                      height="433px"
                       alt="ikon"
-                      src="/img/detail.png"
+                      src="/img/detail.jpeg"
                       objectFit="contain"
                     />
                   </div>
+
+                  <p className="text-sm text-gray-500 mt-6">
+                    Seluruh program Aksi Peduli #TemanHijrah (APTH) ini gratis
+                    tanpa dipungut biaya apapun. Hati-hati terhadap penipuan
+                    yang mengatasnamakan APTH. Karena kami ikhlas kok,
+                    insyaAllah 😁.
+                  </p>
+                  <p className="text-sm text-gray-500 mt-4">
+                    Silahkan share informasi ke teman dan keluargamu yang
+                    membutuhkan yaa!
+                  </p>
+                  <br />
                 </div>
               </div>
             </div>

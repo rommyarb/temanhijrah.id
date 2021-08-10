@@ -123,8 +123,8 @@ const domisiliList = [
   { value: 'Bogor', label: 'Bogor' },
   { value: 'Depok', label: 'Depok' },
   { value: 'Tangerang', label: 'Tangerang' },
-  { value: 'Tangerang Selatan', label: 'Tangerang Selatan' },
   { value: 'Bekasi', label: 'Bekasi' },
+  { value: 'Lainnya', label: 'Lainnya' },
 ]
 
 const APP_TITLE = 'Aksi Peduli #TemanHijrah'
