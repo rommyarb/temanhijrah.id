@@ -25,7 +25,7 @@ const Accordion: React.FC<Props> = ({ children, title, icon, isMobile }) => {
         boxShadow:
           '0px 6px 10px rgba(66, 66, 66, 0.2), 0px 0px 4px rgba(66, 66, 66, 0.2)',
       }}
-      className="w-full rounded p-4 sm:py-6 sm:px-12"
+      className="w-full rounded p-4 sm:py-6 sm:px-12 bg-white"
     >
       <button
         className="w-full flex flex-wrap items-center justify-between"

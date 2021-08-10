@@ -118,7 +118,10 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className=" w-full px-4 mt-16 sm:mt-36 section-bg py-12">
+          <div
+            className=" w-full px-4 mt-16 sm:mt-36 py-12"
+            style={{ backgroundColor: appColors.redLightBg }}
+          >
             <div className="max-w-4xl mx-auto">
               <div className="sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
                 <div className="text-center w-full">
@@ -168,79 +171,89 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-4xl w-full px-4 mt-16 sm:mt-24">
-            <div className="sm:max-w-2xl sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
-              <div>
-                Buat kalian yang{' '}
-                <span style={{ color: appColors.redPrimary }}>
-                  Mau Membantu 😊
-                </span>
+          <div
+            className="w-full"
+            style={{
+              backgroundImage: 'url(/img/bubble1.svg)',
+              backgroundSize: isMobile ? '60%' : '45%',
+              backgroundPositionY: isMobile ? '20px' : '-95px',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div className="mx-auto max-w-4xl w-full px-4 mt-16 sm:mt-24">
+              <div className="sm:max-w-2xl sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
+                <div>
+                  Buat kalian yang{' '}
+                  <span style={{ color: appColors.redPrimary }}>
+                    Mau Membantu 😊
+                  </span>
+                </div>
               </div>
-            </div>
-            <div
-              className="mt-4 sm:mt-6 tracking-wide text-sm"
-              style={{ color: appColors.gray2 }}
-            >
-              Silahkan pilih jenis bantuan yang ingin kalian berikan
-            </div>
-            {dataBantu.map((d, i) => (
-              <div className="mt-4 sm:mt-6" key={`data-bantu-${i}`}>
-                <Accordion icon={d.icon} title={d.title} isMobile={isMobile}>
-                  {d.data.map((item, j) => (
-                    <div
-                      key={`bantu-informasi-${j}`}
-                      style={{ backgroundColor: appColors.redLight }}
-                      className="p-6 md:p-4 w-full rounded-md sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5"
-                    >
-                      <div
-                        style={{ color: appColors.gray3 }}
-                        className="text-sm tracking-wide pr-2"
-                      >
-                        {item.title}
-                      </div>
-                      <div
-                        onClick={() => window.open(item.link, '_blank')}
-                        className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
-                      >
-                        Hubungi
-                      </div>
-                    </div>
-                  ))}
-                </Accordion>
+              <div
+                className="mt-4 sm:mt-6 tracking-wide text-sm"
+                style={{ color: appColors.gray2 }}
+              >
+                Silahkan pilih jenis bantuan yang ingin kalian berikan
               </div>
-            ))}
-          </div>
-        </div>
+              {dataBantu.map((d, i) => (
+                <div className="mt-4 sm:mt-6" key={`data-bantu-${i}`}>
+                  <Accordion icon={d.icon} title={d.title} isMobile={isMobile}>
+                    {d.data.map((item, j) => (
+                      <div
+                        key={`bantu-informasi-${j}`}
+                        style={{ backgroundColor: appColors.redLight }}
+                        className="p-6 md:p-4 w-full rounded-md sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5"
+                      >
+                        <div
+                          style={{ color: appColors.gray3 }}
+                          className="text-sm tracking-wide pr-2"
+                        >
+                          {item.title}
+                        </div>
+                        <div
+                          onClick={() => window.open(item.link, '_blank')}
+                          className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                        >
+                          Hubungi
+                        </div>
+                      </div>
+                    ))}
+                  </Accordion>
+                </div>
+              ))}
+            </div>
 
-        <div className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto">
-          <div className="hidden sm:block sm:px-0 sm:pl-4 sm:mr-16">
-            <Image
-              src="/img/tanto7.png"
-              height="400"
-              width="260"
-              alt=""
-              objectFit="contain"
-            />
-          </div>
-          <div className="block sm:hidden px-4">
-            <Image
-              src="/img/tanto7.png"
-              height="200"
-              width="130"
-              alt=""
-              objectFit="contain"
-            />
-          </div>
-          <div className="px-4 md:px-0 md:ml-4">
-            <div className="sm:font-semibold font-medium text-2xl sm:text-4xl">
-              InsyaAllah laporan program kami akan selalu update
-            </div>
-            <div className="mt-6">
-              <Tombol
-                notFullInMobile={true}
-                label="Lihat Laporan"
-                warna="merah"
-              />
+            <div className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto">
+              <div className="hidden sm:block sm:px-0 sm:pl-4 sm:mr-16">
+                <Image
+                  src="/img/tanto7.png"
+                  height="400"
+                  width="260"
+                  alt=""
+                  objectFit="contain"
+                />
+              </div>
+              <div className="block sm:hidden px-4">
+                <Image
+                  src="/img/tanto7.png"
+                  height="200"
+                  width="130"
+                  alt=""
+                  objectFit="contain"
+                />
+              </div>
+              <div className="px-4 md:px-0 md:ml-4">
+                <div className="sm:font-semibold font-medium text-2xl sm:text-4xl">
+                  InsyaAllah laporan program kami akan selalu update
+                </div>
+                <div className="mt-6">
+                  <Tombol
+                    notFullInMobile={true}
+                    label="Lihat Laporan"
+                    warna="merah"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
