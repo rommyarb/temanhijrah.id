@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Header />
+        <Header menuList={[]} />
         <Link href="/" passHref>
           <div className="flex items-center max-w-4xl mx-auto mt-7 px-4 cursor-pointer">
             <Image
