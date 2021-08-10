@@ -11,7 +11,7 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
         role="dialog"
         aria-modal="true"
       >
-        <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="flex items-end justify-center min-h-screen sm:pt-4 sm:px-4 pb-20 text-center sm:block sm:p-0">
           <div
             className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
             aria-hidden="true"
@@ -24,7 +24,7 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
             &#8203;
           </span>
 
-          <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+          <div className="inline-block align-bottom bg-white sm:rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-full max-w-full sm:max-w-4xl">
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:px-5 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <div className="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
@@ -123,10 +123,19 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
                     yang mengatasnamakan APTH. Karena kami ikhlas kok,
                     insyaAllah 😁.
                   </p>
-                  <p className="text-sm text-gray-500 mt-4">
+                  <p className="text-sm text-gray-500 mt-4 mb-2">
                     Silahkan share informasi ke teman dan keluargamu yang
                     membutuhkan yaa!
                   </p>
+
+                  <a
+                    className="text-sm text-blue-500"
+                    href="/img/detail.jpeg"
+                    target="_blank"
+                  >
+                    👉 Download Syarat &amp; ketentuan di atas
+                  </a>
+                  <br />
                   <br />
                 </div>
               </div>
