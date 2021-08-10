@@ -3,7 +3,6 @@ import React from 'react'
 import Head from 'next/head'
 import Select from 'react-select'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { useWindowWidth } from '@react-hook/window-size'
 //
 import Container from '../components/Container'
@@ -12,7 +11,6 @@ import appColors from '../constants/appColors'
 import Tombol from '../components/Tombol'
 import Accordion from '../components/Accordion'
 // import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
 import {
@@ -24,6 +22,7 @@ import {
 } from '../constants/datas'
 import Footer from '../components/Footer'
 import Modal from '../components/Modal'
+import { SelectValue } from '../types/selectValue'
 
 export default function Home() {
   const programRef = React.useRef<HTMLDivElement>(null)
@@ -31,10 +30,10 @@ export default function Home() {
   const mauMembantuRef = React.useRef<HTMLDivElement>(null)
   const laporanRef = React.useRef<HTMLDivElement>(null)
 
-  const router = useRouter()
   const windowWidth = useWindowWidth()
   const isMobile = React.useMemo(() => windowWidth < 640, [windowWidth])
   const [isModal, setModal] = React.useState(false)
+  const [domisili, setDomisili] = React.useState<SelectValue>(domisiliList[0])
 
   const _handleClickDetail = () => {
     setModal(true)
@@ -70,6 +69,10 @@ export default function Home() {
       },
     },
   ]
+
+  function onHubungi() {
+    window.open(domisili?.value, '_blank')
+  }
 
   return (
     <div>
@@ -130,6 +133,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div
           ref={programRef}
           className="mx-auto flex flex-col items-center pt-8 sm:pt-20"
@@ -139,6 +143,7 @@ export default function Home() {
             backgroundRepeat: 'no-repeat',
           }}
         >
+          {/* PROGRAM */}
           <div className="sm:flex mt-7 sm:mt-0 items-center font-medium text-2xl sm:text-3xl text-center tracking-wide">
             <div>
               Program{' '}
@@ -166,6 +171,9 @@ export default function Home() {
               />
             ))}
           </div>
+          {/* end of - PROGRAM */}
+
+          {/* BUTUH DIBANTU */}
           <div
             ref={mauDibantuRef}
             className=" w-full px-4 mt-16 sm:mt-36 py-12"
@@ -205,20 +213,27 @@ export default function Home() {
                       components={{ IndicatorSeparator: () => null }}
                       instanceId="select-domisili"
                       options={domisiliList}
-                      value={domisiliList[0]}
+                      value={domisili}
+                      onChange={(value) => setDomisili(value)}
                       noOptionsMessage={() => 'Tidak ditemukan.'}
                     />
                   </div>
                   <div className="hidden md:flex md:items-center">
-                    <Tombol label="Hubungi" warna="merah" size="sm" />
+                    <Tombol
+                      onClick={onHubungi}
+                      label="Hubungi"
+                      warna="merah"
+                      size="sm"
+                    />
                   </div>
                   <div className="md:hidden block">
-                    <Tombol label="Hubungi" warna="merah" />
+                    <Tombol onClick={onHubungi} label="Hubungi" warna="merah" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          {/* end of - BUTUH DIBANTU */}
 
           <div
             ref={mauMembantuRef}
@@ -232,6 +247,7 @@ export default function Home() {
               backgroundRepeat: 'no-repeat',
             }}
           >
+            {/* MAU MEMBANTU */}
             <div className="mx-auto max-w-4xl w-full px-4 mt-16 sm:mt-24">
               <div className="sm:max-w-2xl sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
                 <div>
@@ -272,7 +288,10 @@ export default function Home() {
                         </div>
                         <div
                           onClick={() => window.open(item.link, '_blank')}
-                          style={{borderColor: appColors.redPrimary, color: appColors.redPrimary}}
+                          style={{
+                            borderColor: appColors.redPrimary,
+                            color: appColors.redPrimary,
+                          }}
                           className="mt-4 sm:mt-0 py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border text-sm"
                         >
                           {d.title === 'Bantu Dana' ? 'Isi Form' : 'Hubungi'}
@@ -283,7 +302,9 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            {/* end of - MAU MEMBANTU */}
 
+            {/* LAPORAN */}
             <div
               ref={laporanRef}
               className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto"
@@ -319,6 +340,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* end of - LAPORAN */}
           </div>
         </div>
       </Container>

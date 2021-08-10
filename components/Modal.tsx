@@ -129,7 +129,7 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
                   </p>
 
                   <a
-                    className="text-sm text-blue-500"
+                    className="text-xs text-blue-500"
                     href="/img/detail.jpeg"
                     target="_blank"
                   >
