@@ -254,19 +254,28 @@ export default function Home() {
                       <div
                         key={`bantu-informasi-${j}`}
                         style={{ backgroundColor: appColors.redLight }}
-                        className="p-6 md:p-4 w-full rounded-md sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5"
+                        className="p-2 sm:px-9 w-full rounded-md sm:rounded-none md:w-auto sm:flex items-center justify-between mt-4 sm:mt-2.5"
                       >
-                        <div
-                          style={{ color: appColors.gray3 }}
-                          className="text-sm tracking-wide pr-2"
-                        >
-                          {item.title}
+                        <div>
+                          <div
+                            style={{ color: appColors.gray2 }}
+                            className="font-semibold text-sm sm:text-xl tracking-wide pr-2"
+                          >
+                            {item.title}
+                          </div>
+                          <div
+                            style={{ color: appColors.gray2 }}
+                            className="font-normal text-xs sm:text-base tracking-wide pr-2 mt-2"
+                          >
+                            {item.desc}
+                          </div>
                         </div>
                         <div
                           onClick={() => window.open(item.link, '_blank')}
-                          className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                          style={{borderColor: appColors.redPrimary, color: appColors.redPrimary}}
+                          className="mt-4 sm:mt-0 py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border text-sm"
                         >
-                          Hubungi
+                          {d.title === 'Bantu Dana' ? 'Isi Form' : 'Hubungi'}
                         </div>
                       </div>
                     ))}
