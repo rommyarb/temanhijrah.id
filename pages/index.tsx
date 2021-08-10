@@ -175,8 +175,10 @@ export default function Home() {
             className="w-full"
             style={{
               backgroundImage: 'url(/img/bubble1.svg)',
-              backgroundSize: isMobile ? '60%' : '45%',
-              backgroundPositionY: isMobile ? '20px' : '-95px',
+              // backgroundSize: isMobile ? '60%' : '45%',
+              // backgroundPositionY: isMobile ? '20px' : '-95px',
+              backgroundSize: '45%',
+              backgroundPositionY: '-95px',
               backgroundRepeat: 'no-repeat',
             }}
           >
