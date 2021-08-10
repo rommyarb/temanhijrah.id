@@ -25,7 +25,7 @@ class Document extends NextDocument<Props> {
           <meta property="og:description" content={APP_DESCRIPTION} />
           <meta
             property="og:image"
-            content="https://temanhijrah.id/_next/image?url=%2Fimg%2Fgambar1.png&w=1920&q=75"
+            content="https://temanhijrah.id/img/ogimage.jpeg"
           />
           <meta property="og:url" content="https://temanhijrah.id" />
           <meta property="og:type" content="website" />
