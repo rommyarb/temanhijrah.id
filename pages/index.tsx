@@ -15,13 +15,15 @@ import Accordion from '../components/Accordion'
 import styles from '../styles/Home.module.css'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
-import { dataMenu, dataBantu, domisiliList } from '../constants/datas'
+import {
+  dataMenu,
+  dataBantu,
+  domisiliList,
+  APP_TITLE,
+  APP_DESCRIPTION,
+} from '../constants/datas'
 import Footer from '../components/Footer'
 import Modal from '../components/Modal'
-
-const TITLE = 'Aksi Peduli #TemanHijrah'
-const DESCRIPTION =
-  'Gerakan Aksi Peduli Teman Hijrah yang sedang diuji dengan COVID-19.'
 
 export default function Home() {
   const router = useRouter()
@@ -40,8 +42,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
+        <title>{APP_TITLE}</title>
+        <meta name="description" content={APP_DESCRIPTION} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Modal isOpen={isModal} closeModal={_handleCloseModal} />

@@ -127,4 +127,8 @@ const domisiliList = [
   { value: 'Bekasi', label: 'Bekasi' },
 ]
 
-export { dataMenu, dataBantu, domisiliList }
+const APP_TITLE = 'Aksi Peduli #TemanHijrah'
+const APP_DESCRIPTION =
+  'Gerakan Aksi Peduli Teman Hijrah yang sedang diuji dengan COVID-19.'
+
+export { dataMenu, dataBantu, domisiliList, APP_TITLE, APP_DESCRIPTION }
