@@ -11,7 +11,7 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
         role="dialog"
         aria-modal="true"
       >
-        <div className="flex items-end justify-center min-h-screen sm:pt-4 sm:px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="flex items-end justify-center min-h-screen pt-8 sm:pt-4 sm:px-4 pb-20 text-center sm:block sm:p-0">
           <div
             className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
             aria-hidden="true"
