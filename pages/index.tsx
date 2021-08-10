@@ -15,7 +15,7 @@ import Accordion from '../components/Accordion'
 import styles from '../styles/Home.module.css'
 import KartuMenu from '../components/KartuMenu'
 // import styles from '../styles/Home.module.css'
-import { dataMenu, dataBantu } from '../constants/datas'
+import { dataMenu, dataBantu, domisiliList } from '../constants/datas'
 import Footer from '../components/Footer'
 import Modal from '../components/Modal'
 
@@ -47,7 +47,7 @@ export default function Home() {
       <Modal isOpen={isModal} closeModal={_handleCloseModal} />
       <Container>
         <Header />
-        <div id="section-1" className="mt-1 sm:pt-10">
+        <div className="mt-1 sm:pt-10 section-bg">
           <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center">
             <div className="px-4">
               <div className="text-3xl sm:text-5xl font-bold mb-5">
@@ -118,162 +118,97 @@ export default function Home() {
               />
             ))}
           </div>
-          <div className="w-full md:w-auto px-4 md:px-0">
-            <div
-              style={{ borderRadius: 10, backgroundColor: appColors.redLight }}
-              className="p-6 md:p-4 w-full md:w-auto md:flex md:items-center mt-6"
-            >
+          <div className=" w-full px-4 mt-16 sm:mt-36 section-bg py-12">
+            <div className="max-w-4xl mx-auto">
+              <div className="sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
+                <div className="text-center w-full">
+                  Buat kalian yang{' '}
+                  <span style={{ color: appColors.redPrimary }}>
+                    Butuh Dibantu
+                  </span>
+                </div>
+              </div>
               <div
+                className="mt-4 sm:mt-6 tracking-wide text-sm text-center"
                 style={{ color: appColors.gray2 }}
-                className="tracking-wide mb-5 md:mb-0"
               >
-                Pilih Domisili Kamu
+                Silahkan pilih kota tempat tinggalmu, untuk kami hubungkan
+                dengan admin Aksi Peduli #TemanHijrah.
               </div>
-              <div className="md:mx-4 w-full md:w-36 mb-5 md:mb-0">
-                <Select
-                  instanceId="select-domisili"
-                  options={[{ value: 'Jakarta', label: 'Jakarta' }]}
-                  value={{ value: 'Jakarta', label: 'Jakarta' }}
-                  noOptionsMessage={() => 'Tidak ditemukan.'}
-                />
-              </div>
-              <div className="hidden md:block">
-                <Tombol label="Hubungi" warna="merah" size="sm" />
-              </div>
-              <div className="md:hidden block">
-                <Tombol label="Hubungi" warna="merah" />
+              <div
+                style={{
+                  borderRadius: 10,
+                }}
+                className="py-6 px-4 md:px-28 md:p-4 w-full md:items-center mt-6 bg-white shadow-lg border"
+              >
+                <div
+                  style={{ color: appColors.gray2 }}
+                  className="tracking-wide mb-3 md:mb-0"
+                >
+                  Pilih Domisili Kamu
+                </div>
+                <div className="md:flex w-full sm:mt-2">
+                  <div className="w-full md:mr-4 mb-5 md:mb-0">
+                    <Select
+                      components={{ IndicatorSeparator: () => null }}
+                      instanceId="select-domisili"
+                      options={domisiliList}
+                      value={domisiliList[0]}
+                      noOptionsMessage={() => 'Tidak ditemukan.'}
+                    />
+                  </div>
+                  <div className="hidden md:flex md:items-center">
+                    <Tombol label="Hubungi" warna="merah" size="sm" />
+                  </div>
+                  <div className="md:hidden block">
+                    <Tombol label="Hubungi" warna="merah" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="max-w-4xl w-full px-4 mt-16 sm:mt-36">
+          <div className="max-w-4xl w-full px-4 mt-16 sm:mt-24">
             <div className="sm:max-w-2xl sm:flex items-center font-medium text-2xl sm:text-4xl text-left tracking-wide">
               <div>
-                Buat Teman Hijrah yang{' '}
+                Buat kalian yang{' '}
                 <span style={{ color: appColors.redPrimary }}>
-                  Mau Membantu
-                </span>{' '}
-                boleh ikutan 😊
+                  Mau Membantu 😊
+                </span>
               </div>
             </div>
             <div
               className="mt-4 sm:mt-6 tracking-wide text-sm"
               style={{ color: appColors.gray2 }}
             >
-              Silahkan pilih jenis bantuannya di bawah ini
+              Silahkan pilih jenis bantuan yang ingin kalian berikan
             </div>
-            <div className="mt-4 sm:mt-6">
-              <Accordion
-                icon={dataBantu.bantuInformasi.icon}
-                title={dataBantu.bantuInformasi.title}
-                isMobile={isMobile}
-              >
-                {dataBantu.bantuInformasi.data.map((item, index) => (
-                  <div
-                    key={`bantu-informasi-${index}`}
-                    style={{ backgroundColor: appColors.redLight }}
-                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
-                  >
+            {dataBantu.map((d, i) => (
+              <div className="mt-4 sm:mt-6" key={`data-bantu-${i}`}>
+                <Accordion icon={d.icon} title={d.title} isMobile={isMobile}>
+                  {d.data.map((item, j) => (
                     <div
-                      style={{ color: appColors.gray3 }}
-                      className="text-sm tracking-wide pr-2"
+                      key={`bantu-informasi-${j}`}
+                      style={{ backgroundColor: appColors.redLight }}
+                      className="p-6 md:p-4 w-full rounded-md sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5"
                     >
-                      {item.title}
+                      <div
+                        style={{ color: appColors.gray3 }}
+                        className="text-sm tracking-wide pr-2"
+                      >
+                        {item.title}
+                      </div>
+                      <div
+                        onClick={() => window.open(item.link, '_blank')}
+                        className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
+                      >
+                        Hubungi
+                      </div>
                     </div>
-                    <div
-                      onClick={() => window.open(item.link, '_blank')}
-                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
-                    >
-                      Hubungi
-                    </div>
-                  </div>
-                ))}
-              </Accordion>
-            </div>
-            <div className="mt-4 sm:mt-6">
-              <Accordion
-                icon={dataBantu.bantuTenaga.icon}
-                title={dataBantu.bantuTenaga.title}
-                isMobile={isMobile}
-              >
-                {dataBantu.bantuTenaga.data.map((item, index) => (
-                  <div
-                    key={`bantu-informasi-${index}`}
-                    style={{ backgroundColor: appColors.redLight }}
-                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
-                  >
-                    <div
-                      style={{ color: appColors.gray3 }}
-                      className="text-sm tracking-wide pr-2"
-                    >
-                      {item.title}
-                    </div>
-                    <div
-                      onClick={() => window.open(item.link, '_blank')}
-                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
-                    >
-                      Hubungi
-                    </div>
-                  </div>
-                ))}
-              </Accordion>
-            </div>
-            <div className="mt-4 sm:mt-6">
-              <Accordion
-                icon={dataBantu.bantuBarang.icon}
-                title={dataBantu.bantuBarang.title}
-                isMobile={isMobile}
-              >
-                {dataBantu.bantuBarang.data.map((item, index) => (
-                  <div
-                    key={`bantu-informasi-${index}`}
-                    style={{ backgroundColor: appColors.redLight }}
-                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
-                  >
-                    <div
-                      style={{ color: appColors.gray3 }}
-                      className="text-sm tracking-wide pr-2"
-                    >
-                      {item.title}
-                    </div>
-                    <div
-                      onClick={() => window.open(item.link, '_blank')}
-                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
-                    >
-                      Hubungi
-                    </div>
-                  </div>
-                ))}
-              </Accordion>
-            </div>
-            <div className="mt-4 sm:mt-6">
-              <Accordion
-                icon={dataBantu.bantuDana.icon}
-                title={dataBantu.bantuDana.title}
-                isMobile={isMobile}
-              >
-                {dataBantu.bantuDana.data.map((item, index) => (
-                  <div
-                    key={`bantu-informasi-${index}`}
-                    style={{ backgroundColor: appColors.redLight }}
-                    className="p-6 md:p-4 w-full sm:rounded md:w-auto flex items-center justify-between mt-4 sm:mt-2.5 rounded-md sm:rounded-none"
-                  >
-                    <div
-                      style={{ color: appColors.gray3 }}
-                      className="text-sm tracking-wide pr-2"
-                    >
-                      {item.title}
-                    </div>
-                    <div
-                      // onClick={() => window.open(item.link, "_blank")}
-                      className="py-2 px-5 sm:px-12 min-w-max flex justify-center rounded-full cursor-pointer border border-red-500 hover:bg-red-500 text-red-500 hover:text-white"
-                    >
-                      Isi Form
-                    </div>
-                  </div>
-                ))}
-              </Accordion>
-            </div>
+                  ))}
+                </Accordion>
+              </div>
+            ))}
           </div>
         </div>
 

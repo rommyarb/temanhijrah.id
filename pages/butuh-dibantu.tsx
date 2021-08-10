@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import Tombol from '../components/Tombol'
+import { domisiliList } from '../constants/datas'
 
 const TITLE = 'Butuh Dibantu'
 const DESCRIPTION = 'Pilih domisili kamu dulu ya'
@@ -22,7 +23,7 @@ export default function Home() {
       <Container>
         <Header />
         <Link href="/" passHref>
-          <div className="flex items-center max-w-4xl mx-auto mt-7 px-4 md:px-0 cursor-pointer">
+          <div className="flex items-center max-w-4xl mx-auto mt-7 px-4 cursor-pointer">
             <Image
               src="/img/icon/arrow_back.svg"
               alt="Back"
@@ -61,11 +62,20 @@ export default function Home() {
             <div className="text-sm mb-2">
               Kota Domisili <span className="bintang">*</span>
             </div>
-            <Select instanceId="select-kota-domisili" className="mb-5" />
+            <Select
+              components={{ IndicatorSeparator: () => null }}
+              instanceId="select-kota-domisili"
+              className="mb-5"
+              options={domisiliList}
+            />
             <div className="text-sm mb-2">
               Jenis Bantuan <span className="bintang">*</span>
             </div>
-            <Select instanceId="select-jenis-bantuan" className="mb-5" />
+            <Select
+              components={{ IndicatorSeparator: () => null }}
+              instanceId="select-jenis-bantuan"
+              className="mb-5"
+            />
             <Tombol full={true} label="Hubungi Sekarang" warna="merah" />
           </div>
         </div>

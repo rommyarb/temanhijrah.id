@@ -3,7 +3,7 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
-#section-1 {
+.section-bg {
   background: linear-gradient(
     180deg,
     #fff2f2 0%,
