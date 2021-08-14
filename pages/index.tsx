@@ -122,21 +122,12 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="hidden md:block order-first sm:order-last px-20 sm:px-0">
+            <div className="order-first sm:order-last px-20 sm:px-0">
               <Image
                 src="/img/gambar1.png"
                 alt="Hai"
                 width={888}
                 height={1034}
-                objectFit="contain"
-              />
-            </div>
-            <div className="md:hidden order-first sm:order-last px-20 sm:px-0">
-              <Image
-                src="/img/gambar1.png"
-                alt="Hai"
-                width={300}
-                height={350}
                 objectFit="contain"
               />
             </div>
