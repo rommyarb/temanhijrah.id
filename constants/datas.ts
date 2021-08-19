@@ -146,6 +146,11 @@ const domisiliList = [
   },
   {
     value:
+      'https://wa.me/+6287888893960?text=Assalamu%27alaykum%20Mba%20Rara%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20lapor%20pasien%20COVID-19%20yang%20mungkin%20bisa%20dibantu%20Aksi%20Peduli%20Teman%20Hijrah.%20%0A%0ANama%20%3A%0AJenis%20kelamin%20%3A%0AHP%20(WhatsApp)%20%3A%0AUsia%20%3A%0AAlamat%20%3A%0AGejala%20%3A%20ringan%20%2F%20sedang%20%2F%20berat%20%2F%20kritis%0ATest%20PCR%2Fantigen%20%3A%20sudah%20%2F%20belum%0A%0AKami%20berharap%20pasien%20bisa%20mendapatkan%20bantuan%20dari%20Aksi%20Peduli%20%23Teman%20Hijrah%20melalui%20program%20%3Chapus%20bantuan%20yang%20tidak%20diperlukan%3E%3A%0A-%20catering%20makanan%20harian%0A-%20obat%2Fvitamin%2Fherbal%0A-%20isi%20ulang%20tabung%20oksigen%0A-%20layanan%20tele%20konsultasi%20rehabilitasi%0A-%20layanan%20antar%20jemput%20pasien%20%0A%0AJazakumullah%20khayran%20katsiro.%0A%0AWassalamu%27alaykum',
+    label: 'Palu',
+  },
+  {
+    value:
       'https://wa.me/+6281381669966?text=Assalamu%27alaykum%20Mas%20Ade%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20lapor%20pasien%20COVID-19%20yang%20mungkin%20bisa%20dibantu%20Aksi%20Peduli%20Teman%20Hijrah.%20%0A%0ANama%20%3A%0AJenis%20kelamin%20%3A%0AHP%20(WhatsApp)%20%3A%0AUsia%20%3A%0AAlamat%20%3A%0AGejala%20%3A%20ringan%20%2F%20sedang%20%2F%20berat%20%2F%20kritis%0ATest%20PCR%2Fantigen%20%3A%20sudah%20%2F%20belum%0A%0AKami%20berharap%20pasien%20bisa%20mendapatkan%20bantuan%20dari%20Aksi%20Peduli%20%23Teman%20Hijrah%20melalui%20program%20%3Chapus%20bantuan%20yang%20tidak%20diperlukan%3E%3A%0A-%20catering%20makanan%20harian%0A-%20obat%2Fvitamin%2Fherbal%0A-%20isi%20ulang%20tabung%20oksigen%0A-%20layanan%20tele%20konsultasi%20rehabilitasi%0A-%20layanan%20antar%20jemput%20pasien%20%0A%0AJazakumullah%20khayran%20katsiro.%0A%0AWassalamu%27alaykum.',
     label: 'Lainnya',
   },
