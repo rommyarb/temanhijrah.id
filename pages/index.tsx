@@ -23,6 +23,7 @@ import {
 import Footer from '../components/Footer'
 import Modal from '../components/Modal'
 import { SelectValue } from '../types/selectValue'
+import urls from '../constants/urls'
 
 export default function Home() {
   const programRef = React.useRef<HTMLDivElement>(null)
@@ -170,6 +171,26 @@ export default function Home() {
                 toggleModal={_handleClickDetail}
               />
             ))}
+          </div>
+          <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mt-4 sm:mt-8">
+            <Tombol
+              full
+              warna="merah"
+              customLabel={
+                <div className="flex items-center whitespace-nowrap">
+                  download info lengkap kami&nbsp;
+                  <div
+                    className=" rounded-md bg-white px-1"
+                    style={{ color: appColors.redPrimary }}
+                  >
+                    .pdf
+                  </div>{' '}
+                </div>
+              }
+              onClick={() => {
+                window.open(urls.DOWNLOAD_INFO_LENGKAP, '_blank')
+              }}
+            />
           </div>
           {/* end of - PROGRAM */}
 

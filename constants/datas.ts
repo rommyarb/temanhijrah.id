@@ -2,27 +2,27 @@ const dataMenu = [
   {
     ikon: '/img/icon/catering.svg',
     judul: 'Butuh Catering',
-    deskripsi: 'Kami memberikan makanan siap santap dengan sayur & buah',
+    deskripsi: 'Paket makanan harian yang halal dan sehat',
   },
   {
     ikon: '/img/icon/obat.svg',
     judul: 'Butuh Obat',
-    deskripsi: 'Kami distribusikan obat, vitamin, dan juga herbal',
+    deskripsi: 'Paket vitamin, herbal dan obat sesuai resep dokter',
   },
   {
     ikon: '/img/icon/oksigen.svg',
     judul: 'Butuh Oksigen',
-    deskripsi: 'Kami pinjamkan tabung oksigen untuk yang saturasinya <90',
+    deskripsi: 'Program refill/peminjaman tabung O₂ dan O₂ concentrator',
   },
   {
     ikon: '/img/icon/telemedis.svg',
-    judul: 'Butuh Telemedis',
-    deskripsi: 'Melayani konsultasi medis & rehabilitasi ',
+    judul: 'Butuh Telerehab',
+    deskripsi: 'Konsultasi kesehatan & spiritual via online dgn pakarnya',
   },
   {
     ikon: '/img/icon/mobil.svg',
-    judul: 'Butuh Antar Jemput',
-    deskripsi: 'Menyediakan untuk operasional jalan',
+    judul: 'Butuh Ambulans',
+    deskripsi: 'Layanan antar jemput khusus pasien COVID-19',
   },
 ]
 

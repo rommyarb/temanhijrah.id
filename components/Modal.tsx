@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { Modals } from '../types/componentProps'
+import urls from '../constants/urls'
+import Tombol from './Tombol'
 
 const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
   return (
@@ -83,11 +85,11 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
                           </tr>
                           <tr>
                             <td className="w-1/2">Program Obat</td>
-                            <td>: Jabodetabek</td>
+                            <td>: Jabodetabek dan Palu</td>
                           </tr>
                           <tr>
                             <td className="w-1/2">Program Oksigen</td>
-                            <td>: Jabodetabek</td>
+                            <td>: Jabodetabek dan Palu</td>
                           </tr>
                           <tr>
                             <td className="w-1/2">Program Telerehab</td>
@@ -95,7 +97,7 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
                           </tr>
                           <tr>
                             <td className="w-1/2">Program Ambulans</td>
-                            <td>: Jabodetabek</td>
+                            <td>: Jabodetabek dan Palu</td>
                           </tr>
                         </tbody>
                       </table>
@@ -128,13 +130,22 @@ const Modal: React.FC<Modals> = ({ isOpen, closeModal }) => {
                     membutuhkan yaa!
                   </p>
 
-                  <a
-                    className="text-xs text-blue-500"
-                    href="/img/detail.jpeg"
-                    target="_blank"
-                  >
-                    👉 Download Syarat &amp; ketentuan di atas
-                  </a>
+                  <div className="sm:w-3/5 md:w-1/2 lg:w-2/5 mt-6 mx-auto">
+                    <Tombol
+                      full
+                      size="sm"
+                      warna="merah"
+                      customLabel={
+                        <div className="text-xs sm:text-sm">
+                          💾 Download Syarat &amp; ketentuan di atas
+                        </div>
+                      }
+                      onClick={() => {
+                        window.open(urls.DOWNLOAD_INFO_LENGKAP, '_blank')
+                      }}
+                    />
+                  </div>
+
                   <br />
                   <br />
                 </div>

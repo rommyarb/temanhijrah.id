@@ -3,7 +3,8 @@ import Image from 'next/image'
 import appColors from '../constants/appColors'
 
 interface Props {
-  label: string
+  label?: string
+  customLabel?: JSX.Element
   warna?: string
   ikon?: string
   size?: 'sm' | 'base'
@@ -14,6 +15,7 @@ interface Props {
 
 const Tombol: React.FC<Props> = ({
   label,
+  customLabel,
   warna,
   ikon,
   size,
@@ -31,10 +33,14 @@ const Tombol: React.FC<Props> = ({
         notFullInMobile ? 'px-10' : 'w-full',
         size === 'sm' && 'h-8',
         size !== 'sm' && 'h-11',
-        size === 'sm' ? 'md:w-40' : 'md:w-56',
+        size === 'sm' ? (!full ? 'md:w-40' : '') : !full ? 'md:w-56' : '',
       ].join(' ')}
     >
-      <div className={[size === 'sm' && 'text-sm'].join(' ')}>{label}</div>
+      {label ? (
+        <div className={[size === 'sm' && 'text-sm'].join(' ')}>{label}</div>
+      ) : (
+        customLabel
+      )}
       {ikon && (
         <div className="mt-1">
           <Image src={ikon} height="18px" width="18px" alt="Logo" />
@@ -51,10 +57,14 @@ const Tombol: React.FC<Props> = ({
         notFullInMobile ? 'px-10' : 'w-full',
         size === 'sm' && 'h-8',
         size !== 'sm' && 'h-11',
-        size === 'sm' ? 'md:w-40' : 'md:w-56',
+        size === 'sm' ? (!full ? 'md:w-40' : '') : !full ? 'md:w-56' : '',
       ].join(' ')}
     >
-      <div className={[size === 'sm' && 'text-sm'].join(' ')}>{label}</div>
+      {label ? (
+        <div className={[size === 'sm' && 'text-sm'].join(' ')}>{label}</div>
+      ) : (
+        customLabel
+      )}
       {ikon && (
         <div className="mt-1">
           <Image src={ikon} height="15px" width="15px" alt="Logo" />
