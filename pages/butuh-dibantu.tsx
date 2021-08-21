@@ -84,4 +84,6 @@
 //   )
 // }
 
-export {}
+export default function ButuhDibantu() {
+  return null
+}

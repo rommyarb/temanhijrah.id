@@ -49,6 +49,11 @@ export default function Laporan() {
 
       <Container>
         <Header menuList={menuList} />
+        <div className="w-full py-10 flex justify-center items-center">
+          <div className="text-gray-500 text-sm italic">
+            🚧 Under development&hellip;
+          </div>
+        </div>
       </Container>
     </div>
   )

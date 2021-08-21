@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Select from 'react-select'
 import Image from 'next/image'
 import { useWindowWidth } from '@react-hook/window-size'
+import { useRouter } from 'next/router'
 //
 import Container from '../components/Container'
 import Header from '../components/Header'
@@ -26,6 +27,7 @@ import { SelectValue } from '../types/selectValue'
 import urls from '../constants/urls'
 
 export default function Home() {
+  const router = useRouter()
   const programRef = React.useRef<HTMLDivElement>(null)
   const mauDibantuRef = React.useRef<HTMLDivElement>(null)
   const mauMembantuRef = React.useRef<HTMLDivElement>(null)
@@ -330,20 +332,11 @@ export default function Home() {
               ref={laporanRef}
               className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto"
             >
-              <div className="hidden sm:block sm:px-0 sm:pl-4 sm:mr-16">
+              <div className="px-4 sm:px-0 sm:pl-4 sm:mr-16">
                 <Image
                   src="/img/tanto7.png"
                   height="400"
                   width="260"
-                  alt=""
-                  objectFit="contain"
-                />
-              </div>
-              <div className="block sm:hidden px-4">
-                <Image
-                  src="/img/tanto7.png"
-                  height="200"
-                  width="130"
                   alt=""
                   objectFit="contain"
                 />
@@ -357,6 +350,9 @@ export default function Home() {
                     notFullInMobile={true}
                     label="Lihat Laporan"
                     warna="merah"
+                    onClick={() => {
+                      router.push('/laporan')
+                    }}
                   />
                 </div>
               </div>
