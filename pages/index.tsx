@@ -68,7 +68,8 @@ export default function Home() {
     {
       label: 'Laporan',
       onClick: () => {
-        laporanRef.current?.scrollIntoView({ behavior: 'smooth' })
+        // laporanRef.current?.scrollIntoView({ behavior: 'smooth' })
+        router.push('/laporan')
       },
     },
   ]

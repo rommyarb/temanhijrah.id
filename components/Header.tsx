@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import appColors from '../constants/appColors'
+import dimens from '../constants/dimens'
 
 interface Props {
   menuList: {
@@ -17,7 +18,7 @@ const Header: React.FC<Props> = ({ menuList }) => {
     <div className="shadow-md">
       <div
         className="px-4 mx-auto max-w-4xl flex items-center justify-between"
-        style={{ height: 70 }}
+        style={{ height: dimens.HEADER_HEIGHT }}
       >
         <Link href="/" passHref>
           <div className="cursor-pointer flex justify-center">

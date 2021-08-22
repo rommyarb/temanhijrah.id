@@ -5,6 +5,7 @@ import React from 'react'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import { APP_DESCRIPTION, APP_TITLE } from '../constants/datas'
+import dimens from '../constants/dimens'
 
 export default function Laporan() {
   const router = useRouter()
@@ -32,7 +33,7 @@ export default function Laporan() {
       {
         label: 'Laporan',
         onClick: () => {
-          router.push('/')
+          router.push('/laporan')
         },
       },
     ],
@@ -49,9 +50,12 @@ export default function Laporan() {
 
       <Container>
         <Header menuList={menuList} />
-        <div className="w-full py-10 flex justify-center items-center">
-          <div className="text-gray-500 text-sm italic">
-            🚧 Under development&hellip;
+        <div>
+          <div
+            className="mt-1 iframe-div"
+            style={{ top: dimens.HEADER_HEIGHT }}
+          >
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSeOY2i1orxT4AAWUycl57jLrgjtTmGD-aQaE2xDOpLT0bfCdarU0DokAb8lqplmACxBTykzGnpkofs/pubhtml?widget=true&amp;headers=false"></iframe>
           </div>
         </div>
       </Container>

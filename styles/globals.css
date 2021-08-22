@@ -40,3 +40,21 @@ body {
     height: 200px;
   }
 }
+
+/* untuk laporan (iframe) */
+.iframe-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.iframe-div iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.name {
+  font-size: 40px;
+}
