@@ -163,7 +163,7 @@ export default function Home() {
             menekan seminimal dan seefisien mungkin. Dan dari survey kami, 5 hal
             ini adalah apa yang paling dibutuhkan pasien saat ISOMAN.
           </div>
-          <div className="max-w-4xl grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-2 sm:gap-4 mt-6">
+          <div className="px-2 sm:px-0 lg:px-0 max-w-4xl grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-2 sm:gap-4 mt-6">
             {dataMenu?.map((val, index) => (
               <KartuMenu
                 key={`kartuMenu-${index}`}
@@ -179,7 +179,7 @@ export default function Home() {
               full
               warna="merah"
               customLabel={
-                <div className="flex items-center whitespace-nowrap">
+                <div className="flex text-xs sm:text-base items-center whitespace-nowrap">
                   download info lengkap kami&nbsp;
                   <div
                     className=" rounded-md bg-white px-1"
@@ -332,7 +332,7 @@ export default function Home() {
               ref={laporanRef}
               className="max-w-4xl mt-20 sm:mt-32 mb-14 sm:mb-20 sm:flex sm:items-center mx-auto"
             >
-              <div className="px-4 sm:px-0 sm:pl-4 sm:mr-16">
+              <div className="px-4 w-2/5 sm:px-0 sm:pl-4 sm:mr-16">
                 <Image
                   src="/img/tanto7.png"
                   height="400"

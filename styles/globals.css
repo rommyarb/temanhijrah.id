@@ -28,3 +28,15 @@ body {
   color: #ffffff;
   text-align: left;
 }
+
+/* untuk card */
+.kartu-menu {
+  /* empty */
+  height: 215px;
+}
+@media (min-width: 375px) {
+  .kartu-menu {
+    width: 174px;
+    height: 200px;
+  }
+}
