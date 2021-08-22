@@ -22,9 +22,11 @@ const KartuMenu: React.FC<KartuMenuProps> = ({
         >
           {judul}
         </div>
-        <div style={{ color: appColors.gray2 }} className="text-xs">
-          {deskipsi}
-        </div>
+        <div
+          style={{ color: appColors.gray2 }}
+          className="text-xs"
+          dangerouslySetInnerHTML={{ __html: deskipsi }}
+        ></div>
       </div>
       <div
         className="cursor-pointer absolute bottom-4 left-0 w-full"

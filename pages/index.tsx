@@ -157,10 +157,10 @@ export default function Home() {
             className="text-center max-w-4xl mt-5 tracking-wide text-sm px-4"
             style={{ color: appColors.gray2 }}
           >
-            Ini adalah non-profit movement, dimana seluruh tim inti kami tidak
-            mencari keuntungan apapun dalam menyediakan kebutuhan kalian yang
-            sedang ISOMAN. Sedangkan untuk biaya operasional, kami berusaha
-            menekan seminimal dan seefisien mungkin. Dan dari survey kami, 5 hal
+            Ini adalah <i>non-profit movement</i>, dimana seluruh tim inti kami
+            tidak mencari keuntungan apapun dalam menyediakan kebutuhan kalian
+            yang sedang ISOMAN. Sedangkan untuk biaya operasional, kami berusaha
+            menekan seminimal dan seefisien mungkin. Dan dari survei kami, 5 hal
             ini adalah apa yang paling dibutuhkan pasien saat ISOMAN.
           </div>
           <div className="px-2 sm:px-0 lg:px-0 max-w-4xl grid grid-flow-col grid-rows-3 sm:grid-rows-2 lg:grid-rows-1 gap-2 sm:gap-4 mt-6">
@@ -305,9 +305,8 @@ export default function Home() {
                           <div
                             style={{ color: appColors.gray2 }}
                             className="font-normal text-xs sm:text-base tracking-wide pr-2 mt-2"
-                          >
-                            {item.desc}
-                          </div>
+                            dangerouslySetInnerHTML={{ __html: item.desc }}
+                          ></div>
                         </div>
                         <div
                           onClick={() => window.open(item.link, '_blank')}

@@ -12,12 +12,14 @@ const dataMenu = [
   {
     ikon: '/img/icon/oksigen.svg',
     judul: 'Butuh Oksigen',
-    deskripsi: 'Program refill/peminjaman tabung O₂ dan O₂ concentrator',
+    deskripsi:
+      'Program <i>refill</i> / peminjaman tabung O₂ dan O₂ <i>concentrator</i>',
   },
   {
     ikon: '/img/icon/telemedis.svg',
     judul: 'Butuh Telerehab',
-    deskripsi: 'Konsultasi kesehatan & spiritual via online dgn pakarnya',
+    deskripsi:
+      'Konsultasi kesehatan &amp; spiritual via online dengan pakarnya',
   },
   {
     ikon: '/img/icon/mobil.svg',
@@ -32,18 +34,18 @@ const dataBantu = [
     icon: '/img/icon/light.svg',
     data: [
       {
-        title: 'Info Jasa Refill O2',
-        desc: 'Hubungi kami kalau kamu tau tempat refill O2 yang ready stock',
+        title: 'Info Jasa Refill O₂',
+        desc: 'Hubungi kami kalau kamu tau tempat <i>refill</i> O₂ yang ready stock',
         link: 'https://wa.me/+6281234562515?text=Assalamu%27alaykum%20Mas%20Aboe%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20infoin%20tempat%20isi%20ulang%20tabung%20oksigen.%0A%0ANama%20vendor%20isi%20ulang%20%3A%0ANama%20pemilik%2Fpengelola%20%3A%0AHP%20(WhatsApp)%20pengelola%20%3A%0AAlamat%20vendor%20(jika%20ada%20shareloc%20Google%20Map%20lbh%20baik)%20%3A%0AHarga%20pengisian%20%3A%0AReady%20stock%20(hapus%20salah%20satu)%20%3A%20iya%20%2F%20tidak%20%0ABisa%20isi%20dan%20pick%20up%20di%20hari%20yg%20sama%3A%20iya%2Ftidak%20%20%0A%0AJazakumullah%20khayran%20katsiro.%0A%0AWassalamu%27alaykum.',
       },
       {
         title: 'Info Jasa Catering',
-        desc: 'Hubungi kami kalau kamu tau catering yg halal, thoyib & hemat',
+        desc: 'Hubungi kami kalau kamu tau catering yg halal, <i>thoyib</i> &amp; hemat',
         link: 'https://wa.me/+6287878762629?text=Assalamu%27alaykum%20Pak%20Sulung%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20bantu%20Aksi%20Peduli%20Teman%20Hijrah%20dg%20share%20info%20vendor%20catering%20untuk%20wilayah%20%3Cisikan%20nama%20kota%20dan%20kecamatan%20lokasi%20catering%3E.%0A%0ANama%20catering%3A%0ANama%20pemilik%2Fpengelola%20%3A%0AHP%20(WhatsApp)%20pengelola%20%3A%0AAlamat%20catering%20%3A%0AKisaran%20harga%20catering%20per%20hari%20%2F%20orang%20(opsional)%3A%0A%0AJazakumullah%20khayran%20katsiro.%0A%0AWassalamu%27alaykum.',
       },
       {
         title: 'Info Akses Ruang Perawatan RS',
-        desc: 'Hubungi kami kalau kamu tau ruang perawatan RS yg kosong',
+        desc: 'Hubungi kami kalau kamu tahu ruang perawatan RS yg kosong',
         link: 'https://wa.me/+6281234562505?text=Assalamu%27alaykum%20Mba%20Ira%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20bantu%20Aksi%20Peduli%20Teman%20Hijrah%20dg%20share%20info%20Rumah%20Sakit%20yang%20msh%20ada%20ruangan%20perawatan%20pasien%20COVID-19.%0A%0ANama%20RS%20%3A%0AAlamat%20RS%20%3A%0ATelp%20RS%20%3A%0ANama%20PiC%20yg%20bisa%20dihibungi%20%3A%0ANomor%20WA%20PiC%20%3A%0A%0AJazakumullah%20khayran%20katsiro.%0A%0AWassalamu%27alaykum.%0A',
       },
       {
@@ -64,7 +66,7 @@ const dataBantu = [
       },
       {
         title: 'Dokter Spesialis Rehab Medik',
-        desc: 'Khusus untuk kamu yang punya keahlian utk ngasih telerehab',
+        desc: 'Khusus untuk kamu yang punya keahlian untuk ngasih telerehab',
         link: 'https://wa.me/+628172399370?text=Assalamu%E2%80%99alaykum%20Mas%20Pria%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20bantu%20Aksi%20Peduli%20Teman%20Hijrah%20sebagai%20relawan%20Dokter%20Telereab.%20Berikut%20data%20saya%0A%0ANama%20%3A%0AJenis%20kelamin%20%3A%0AUsia%20%3A%0AAlamat%20%3A%0AUmum%2Fspesialis%20%3A%0A%0AKira2%20data%20apa%20saja%20yg%20perlu%20saya%20lengkapi%3F%0A%0AJazakumullah%20khayran%20katsiro%20ya%2C%20Mas.',
       },
       {
@@ -79,18 +81,18 @@ const dataBantu = [
     icon: '/img/icon/present.svg',
     data: [
       {
-        title: 'Pinjaman Tabung O2',
+        title: 'Pinjaman Tabung O₂',
         desc: 'Dengan masa pinjam minimal 1 bulan.',
         link: 'https://wa.me/+6281229999901?text=Assalamu%E2%80%99alaykum%20Mas%20Prima%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20berkontribusi%20pada%20gerakan%20Aksi%20Peduli%20Teman%20Hijrah%20dengan%20minjemin%20tabung%20oksigen%20saya.%20Berikut%20data%20saya%0A%0ANama%20%3A%0AAlamat%20%3A%0AJumlah%20tabung%3A%0AVolume%20tabung%3A%20%0ADurasi%20pinjaman%20(min.%201%20bulan)%3A%20%0A%0AJazakumullah%20khayran%20katsiro.%0A',
       },
       {
         title: 'Pinjaman Mobil',
-        desc: 'Untuk delivery tabung O2 dengan masa pinjam minimal 2 minggu',
+        desc: 'Untuk delivery tabung O₂ dengan masa pinjam minimal 2 minggu',
         link: 'https://wa.me/+6281234562515?text=Assalamu%E2%80%99alaykum%20Mas%20Aboe%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20berkontribusi%20pada%20gerakan%20Aksi%20Peduli%20Teman%20Hijrah%20dengan%20minjemin%20mobil%20saya.%20Berikut%20data%20saya%0A%0ANama%20%3A%0AAlamat%20%3A%0AJenis%20mobil%20%3A%0ASurat2%20%3A%20lengkap%2Ftidak%20lengkap%0AStatus%20pajak%20%3A%20aktif%2Ftidak%20aktif%0ADurasi%20pinjaman%20(min.%202%20minggu)%3A%20%0A%0AJazakumullah%20khayran%20katsiro.',
       },
       {
         title: 'Pinjaman Motor',
-        desc: '​​Untuk delivery tabung O2 dengan masa pinjam minimal 1 bulan',
+        desc: '​​Untuk delivery tabung O₂ dengan masa pinjam minimal 1 bulan',
         link: 'https://wa.me/+6281234562515?text=Assalamu%E2%80%99alaykum%20Mas%20Aboe%2C%0A%0AKenalkan%2C%20saya%20%3Cisikan%20namamu%3E.%20Saya%20mau%20berkontribusi%20pada%20gerakan%20Aksi%20Peduli%20Teman%20Hijrah%20dengan%20minjemin%20motor%20saya.%20Berikut%20data%20saya%0A%0ANama%20%3A%0AAlamat%20%3A%0AJenis%20motor%20%3A%0ASurat2%20%3A%20lengkap%2Ftidak%20lengkap%0AStatus%20pajak%20%3A%20aktif%2Ftidak%20aktif%0ADurasi%20pinjaman%20(min.%201%20bulan)%3A%20%0A%0AJazakumullah%20khayran%20katsiro.',
       },
       {
@@ -111,7 +113,7 @@ const dataBantu = [
       },
       {
         title: 'Sedekah Pembelian Oksigen Konsentrat',
-        desc: 'Sedekah untuk pembelian O2 Concentrator (minimal Rp. 5.000.000)',
+        desc: 'Sedekah untuk pembelian O₂ <i>Concentrator</i> (minimal Rp 5.000.000)',
         link: 'https://bit.ly/sedekahth',
       },
     ],
