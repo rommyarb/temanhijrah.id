@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
-import { APP_DESCRIPTION, APP_TITLE } from '../constants/datas'
 
 type Props = {}
 
@@ -20,14 +19,11 @@ class Document extends NextDocument<Props> {
             href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
           />
-
-          <meta property="og:title" content={APP_TITLE} />
-          <meta property="og:description" content={APP_DESCRIPTION} />
+          <link rel="icon" href="/favicon.ico" />
           <meta
             property="og:image"
             content="https://temanhijrah.id/img/ogimage.jpeg"
           />
-          <meta property="og:url" content="https://temanhijrah.id" />
           <meta property="og:type" content="website" />
         </Head>
         <body>

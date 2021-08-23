@@ -83,7 +83,9 @@ export default function Home() {
       <Head>
         <title>{APP_TITLE}</title>
         <meta name="description" content={APP_DESCRIPTION} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={APP_TITLE} />
+        <meta property="og:description" content={APP_DESCRIPTION} />
+        <meta property="og:url" content="https://temanhijrah.id" />
       </Head>
       <Modal isOpen={isModal} closeModal={_handleCloseModal} />
       <Container>
